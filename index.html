@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="https://ohloneracing.org/assets/favicon.ico" sizes="any">
   <title>Ohlone Renegades Racing — Formula SAE</title>
+  <link rel="icon" href="https://ohloneracing.org/assets/favicon.ico" sizes="any">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -57,13 +57,6 @@
     .delay-100 { transition-delay: 80ms; }
     .delay-200 { transition-delay: 160ms; }
     .delay-300 { transition-delay: 240ms; }
-
-    /* Subtle grid texture */
-    .bg-grid-pattern {
-      background-image: linear-gradient(to right, rgba(242, 169, 30, 0.05) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(242, 169, 30, 0.05) 1px, transparent 1px);
-      background-size: 40px 40px;
-    }
 
     /* Smooth accordion transition using CSS Grid */
     .accordion-content {
@@ -167,15 +160,37 @@
     </div>
   </header>
 
-  <!-- COMPACT SPLIT HERO SECTION WITH VIDEO ON RIGHT -->
+  <!-- COMPACT SPLIT HERO SECTION WITH FULL RIGHT-HALF VIDEO -->
   <section id="home" class="relative overflow-hidden bg-renegade-green text-white border-b border-renegade-gold/25">
-    <div class="absolute inset-0 bg-grid-pattern pointer-events-none"></div>
+    <!-- Full Right-Half Video on Desktop -->
+    <div class="hidden lg:block absolute inset-y-0 right-0 w-1/2 overflow-hidden z-0">
+      <video
+        id="hero-video"
+        class="w-full h-full object-cover"
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="auto"
+      >
+        <source src="/assets/h_video.mp4" type="video/mp4" />
+      </video>
+      <!-- Subtle edge blend into left half & bottom badge -->
+      <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-renegade-green to-transparent pointer-events-none"></div>
+      <div class="absolute inset-0 bg-renegade-green/15 pointer-events-none"></div>
+      <div class="absolute bottom-4 right-5 inline-flex items-center gap-2 rounded-md bg-renegade-green/85 backdrop-blur-md px-3 py-1 border border-renegade-gold/40">
+        <span class="w-2 h-2 rounded-full bg-renegade-gold animate-pulse"></span>
+        <span class="font-display font-bold text-[11px] uppercase tracking-widest text-white">
+          Prototype Build &amp; Testing
+        </span>
+      </div>
+    </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         
-        <!-- Left Column: Compact Headline, CTAs & Stats -->
-        <div class="lg:col-span-6">
+        <!-- Left Half: Compact Headline, CTAs & Stats -->
+        <div class="lg:col-span-6 lg:pr-8">
           <div class="inline-flex items-center gap-2.5 mb-3">
             <span class="w-6 h-0.5 bg-renegade-gold"></span>
             <span class="font-display font-bold text-xs tracking-[0.22em] uppercase text-renegade-gold">
@@ -233,11 +248,10 @@
           </div>
         </div>
 
-        <!-- Right Column: Featured Video Showcase -->
-        <div class="lg:col-span-6">
-          <div class="relative rounded-2xl overflow-hidden bg-renegade-greenMid border border-renegade-gold/35 shadow-2xl aspect-video group">
+        <!-- Mobile/Tablet Video Fallback (Full Width on Smaller Screens) -->
+        <div class="lg:hidden">
+          <div class="relative rounded-xl overflow-hidden bg-renegade-greenMid border border-renegade-gold/35 shadow-xl aspect-video">
             <video
-              id="hero-video"
               class="w-full h-full object-cover"
               autoplay
               loop
@@ -247,8 +261,6 @@
             >
               <source src="/assets/h_video.mp4" type="video/mp4" />
             </video>
-            <!-- Subtle frame overlay & badge -->
-            <div class="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl pointer-events-none"></div>
             <div class="absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-md bg-renegade-green/85 backdrop-blur-md px-3 py-1 border border-renegade-gold/40">
               <span class="w-2 h-2 rounded-full bg-renegade-gold animate-pulse"></span>
               <span class="font-display font-bold text-[11px] uppercase tracking-widest text-white">
