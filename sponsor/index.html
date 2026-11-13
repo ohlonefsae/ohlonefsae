@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0B2318" />
+  <meta name="description" content="Partner with Ohlone Renegades Racing and support our Formula SAE team." />
+  <title>Sponsor Us — Ohlone Renegades Racing</title>
+  <link rel="icon" href="https://ohloneracing.org/assets/favicon.ico" sizes="any" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { renegade: { green: '#0B2318', greenMid: '#123525', greenLight: '#1B4D36', gold: '#F2A91E', goldHover: '#D99212' } }, fontFamily: { display: ['"Barlow Condensed"', 'sans-serif'], sans: ['Inter', 'sans-serif'] } } } };
+  </script>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+    body { background: #0B2318; background-image: radial-gradient(ellipse at 75% 15%, rgba(27,77,54,.42), transparent 42%); }
+    .grain { background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E"); opacity:.14; pointer-events:none; }
+    .tier { transition: transform .25s ease, border-color .25s ease, background-color .25s ease; }
+    .tier:hover { transform: translateY(-5px); border-color: rgba(242,169,30,.45); }
+    .tier-featured { background:#00645a; border-color:rgba(242,169,30,.42); }
+    .tier-featured:hover { background:#087267; }
+    .field { width:100%; border:1px solid rgba(139,173,157,.16); background:#172720; color:#f5f5f4; border-radius:2px; padding:.8rem .95rem; outline:none; transition:border-color .2s, box-shadow .2s; }
+    .field::placeholder { color:#73857c; }
+    .field:focus { border-color:#F2A91E; box-shadow:0 0 0 2px rgba(242,169,30,.12); }
+    select.field { color-scheme:dark; }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior:auto !important; transition-duration:.01ms !important; } }
+  </style>
+</head>
+<body class="font-sans antialiased text-stone-100 selection:bg-renegade-gold selection:text-renegade-green">
+  <div class="grain pointer-events-none fixed inset-0 z-0" aria-hidden="true"></div>
+  <header class="sticky top-0 z-30 border-b border-white/10 bg-renegade-green/90 backdrop-blur-xl">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
+      <!-- Top-Left Renegades Logo -->
+      <a href="#home" class="flex items-center gap-3 group focus:outline-none">
+        <div class="relative w-10 h-10 rounded-full overflow-hidden shadow-sm ring-2 ring-renegade-gold/60 group-hover:ring-renegade-gold transition-all bg-renegade-green flex items-center justify-center shrink-0">
+          <img
+            src="/assets/renegades-logo.png"
+            alt="Ohlone Renegades Racing Logo"
+            class="w-full h-full object-cover"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+          />
+          <svg style="display:none;" viewBox="0 0 200 200" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="100" fill="#0B2318"/>
+            <path d="M44 82 C75 65, 115 56, 132 61 C141 64, 134 75, 118 82 L96 92 C118 87, 152 80, 174 79 C145 87, 108 97, 87 99 C79 100, 81 92, 92 86 L112 75 C119 71, 115 68, 104 70 C82 74, 62 79, 44 82 Z" fill="#F2A91E"/>
+            <path d="M56 109 L76 79 L93 76 L67 104 Z" fill="#F2A91E"/>
+            <text x="100" y="133" text-anchor="middle" fill="#F2A91E" font-family="Arial Black, sans-serif" font-weight="900" font-style="italic" font-size="22" letter-spacing="5">OHLONE</text>
+            <text x="100" y="151" text-anchor="middle" fill="#F2A91E" font-family="Arial, sans-serif" font-weight="700" font-style="italic" font-size="11" letter-spacing="5">RACING</text>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-extrabold text-xl tracking-wider uppercase leading-none text-renegade-green dark:text-white">
+            Ohlone <span class="text-renegade-gold">Racing</span>
+          </span>
+          <span class="text-[10px] font-semibold tracking-[0.2em] uppercase text-renegade-greenLight dark:text-stone-300 mt-0.5">
+            Renegades FSAE
+          </span>
+        </div>
+      </a>
+      <a href="/" class="rounded-full border border-white/15 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-stone-300 transition hover:border-renegade-gold/70 hover:text-renegade-gold">← Back to site</a>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+    <section class="mx-auto max-w-7xl px-5 pb-16 pt-14 sm:px-8 sm:pb-24 sm:pt-20">
+      <div class="mb-10 max-w-3xl sm:mb-14">
+        <div class="mb-5 flex items-center gap-3"><span class="h-px w-8 bg-renegade-gold"></span><p class="font-display text-xs font-bold uppercase tracking-[.24em] text-teal-500">Partner with us</p></div>
+        <h1 class="font-display text-6xl font-black uppercase leading-[.88] tracking-tight sm:text-8xl">Put your brand<br />on the <span class="text-renegade-gold">car.</span></h1>
+        <p class="mt-6 max-w-2xl text-base leading-7 text-stone-300 sm:text-lg">Your logo travels to FSAE competition, seen by recruiting managers from GM, Ford, Honda, Boeing, and over 100 engineering firms. Every dollar goes directly to the build.</p>
+      </div>
+
+      <div class="grid grid-cols-1 overflow-hidden border border-white/10 sm:grid-cols-2 lg:grid-cols-5">
+        <article class="tier border-b border-white/10 bg-[#172720] p-6 sm:border-r lg:border-b-0">
+          <p class="font-display text-xs font-bold uppercase tracking-[.2em] text-teal-500">Bronze</p><h2 class="mt-3 font-display text-4xl font-extrabold leading-none">$500<span class="text-lg text-stone-500">+</span></h2>
+          <ul class="mt-7 space-y-3 text-sm leading-5 text-stone-300"><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>Logo on team website</span></li><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>Social media recognition</span></li><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>Season update newsletter</span></li></ul>
+        </article>
+        <article class="tier border-b border-white/10 bg-[#172720] p-6 sm:border-b-0 lg:border-r">
+          <p class="font-display text-xs font-bold uppercase tracking-[.2em] text-teal-500">Silver</p><h2 class="mt-3 font-display text-4xl font-extrabold leading-none">$1,000<span class="text-lg text-stone-500">+</span></h2>
+          <ul class="mt-7 space-y-3 text-sm leading-5 text-stone-300"><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>Logo on car bodywork</span></li><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>Logo on team apparel</span></li><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>Website recognition</span></li><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>Social media features</span></li></ul>
+        </article>
+        <article class="tier tier-featured relative border-b p-6 sm:border-r lg:border-b-0">
+          <p class="font-display text-xs font-bold uppercase tracking-[.2em] text-teal-200">Gold — Featured</p><h2 class="mt-3 font-display text-4xl font-extrabold leading-none text-renegade-gold">$2,500<span class="text-lg text-teal-200/60">+</span></h2>
+          <ul class="mt-7 space-y-3 text-sm leading-5 text-white/90"><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>Large logo on car &amp; trailer</span></li><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>Recruiting access to team roster</span></li><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>Featured in all media</span></li><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>Car reveal event invitation</span></li><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>Dedicated sponsor post</span></li></ul>
+        </article>
+        <article class="tier border-b border-white/10 bg-[#172720] p-6 sm:border-b-0 sm:border-r">
+          <p class="font-display text-xs font-bold uppercase tracking-[.2em] text-teal-500">Platinum</p><h2 class="mt-3 font-display text-4xl font-extrabold leading-none">$5,000<span class="text-lg text-stone-500">+</span></h2>
+          <ul class="mt-7 space-y-3 text-sm leading-5 text-stone-300"><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>Title sponsor designation</span></li><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>Largest logo placement</span></li><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>Named recruiting event</span></li><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>All Gold benefits</span></li><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>Co-branded press releases</span></li></ul>
+        </article>
+        <article class="tier bg-[#172720] p-6">
+          <p class="font-display text-xs font-bold uppercase tracking-[.2em] text-teal-500">In-kind</p><h2 class="mt-3 font-display text-4xl font-extrabold leading-none">Parts<span class="ml-1 font-sans text-sm font-normal text-stone-500">/ services</span></h2>
+          <ul class="mt-7 space-y-3 text-sm leading-5 text-stone-300"><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>Machining, materials, software</span></li><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>Logo scaled to value</span></li><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>Tax-deductible donation</span></li><li class="flex gap-2.5"><b class="text-renegade-gold">◆</b><span>All equivalent tier benefits</span></li></ul>
+        </article>
+      </div>
+
+      <div class="mt-9 flex flex-col items-start gap-5 sm:mt-14 sm:flex-row sm:items-center">
+        <a href="mailto:ohlonerenegaderacing@yahoo.com?subject=Ohlone%20Renegades%20Racing%20Sponsor%20Packet" class="inline-flex min-h-14 items-center justify-center bg-renegade-gold px-9 font-display text-sm font-extrabold uppercase tracking-[.12em] text-renegade-green shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-renegade-goldHover">Get the sponsor packet</a>
+        <p class="max-w-xl text-sm leading-6 text-stone-400">All monetary contributions are processed through Ohlone College Foundation (501(c)(3) nonprofit status). Donations may be fully tax-deductible.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="border-t border-white/10 bg-[#08100c]/70">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-2 lg:gap-20">
+        <div>
+          <div class="mb-5 flex items-center gap-3"><span class="h-px w-8 bg-renegade-gold"></span><p class="font-display text-xs font-bold uppercase tracking-[.24em] text-teal-500">Get in touch</p></div>
+          <h2 class="font-display text-6xl font-black uppercase leading-[.9] tracking-tight sm:text-7xl">Let's talk.</h2>
+          <div class="mt-10 space-y-6">
+            <div class="flex gap-4"><span class="flex h-10 w-10 shrink-0 items-center justify-center border border-white/10 bg-[#172720] text-teal-500" aria-hidden="true">✉</span><div><p class="font-display text-[11px] font-bold uppercase tracking-[.18em] text-stone-500">Email</p><a class="mt-1 inline-block text-sm font-medium text-stone-100 hover:text-renegade-gold" href="mailto:ohlonerenegaderacing@yahoo.com">ohlonerenegaderacing@yahoo.com</a></div></div>
+            <div class="flex gap-4"><span class="flex h-10 w-10 shrink-0 items-center justify-center border border-white/10 bg-[#172720] text-teal-500" aria-hidden="true">⌖</span><div><p class="font-display text-[11px] font-bold uppercase tracking-[.18em] text-stone-500">Location</p><p class="mt-1 text-sm leading-6 text-stone-100">Ohlone College — 43600 Mission Blvd, Fremont, CA 94539</p></div></div>
+            <div class="flex gap-4"><span class="flex h-10 w-10 shrink-0 items-center justify-center border border-white/10 bg-[#172720] text-teal-500" aria-hidden="true">☎</span><div><p class="font-display text-[11px] font-bold uppercase tracking-[.18em] text-stone-500">Faculty advisor</p><p class="mt-1 text-sm text-stone-100">Engineering Department, Ohlone College</p></div></div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="mb-6 font-display text-2xl font-bold uppercase tracking-wide">Send a sponsor inquiry</h3>
+          <form id="sponsor-form" class="space-y-4" novalidate>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <label class="block"><span class="mb-2 block font-display text-[11px] font-bold uppercase tracking-[.15em] text-stone-400">Your name</span><input class="field" name="name" autocomplete="name" placeholder="Jane Smith" required /></label>
+              <label class="block"><span class="mb-2 block font-display text-[11px] font-bold uppercase tracking-[.15em] text-stone-400">Email address</span><input class="field" name="email" type="email" autocomplete="email" placeholder="jane@company.com" required /></label>
+            </div>
+            <label class="block"><span class="mb-2 block font-display text-[11px] font-bold uppercase tracking-[.15em] text-stone-400">Company / organization</span><input class="field" name="company" autocomplete="organization" placeholder="Acme Engineering Co." required /></label>
+            <label class="block"><span class="mb-2 block font-display text-[11px] font-bold uppercase tracking-[.15em] text-stone-400">I'm interested in</span><select class="field" name="interest" required><option value="" selected disabled>Select one</option><option>Bronze sponsorship</option><option>Silver sponsorship</option><option>Gold sponsorship</option><option>Platinum sponsorship</option><option>In-kind contribution</option><option>Other / let's discuss</option></select></label>
+            <label class="block"><span class="mb-2 block font-display text-[11px] font-bold uppercase tracking-[.15em] text-stone-400">Message</span><textarea class="field min-h-28 resize-y" name="message" placeholder="Tell us a bit about what you have in mind…" rows="4" required></textarea></label>
+            <button id="submit-button" type="submit" class="w-full min-h-13 bg-renegade-gold px-6 py-4 font-display text-sm font-extrabold uppercase tracking-[.12em] text-renegade-green transition hover:bg-renegade-goldHover disabled:cursor-wait disabled:opacity-60">Send message</button>
+            <p id="form-status" class="min-h-5 text-sm leading-5 text-stone-400" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative z-10 border-t border-white/10 px-5 py-7 text-center text-[10px] font-medium uppercase tracking-[.18em] text-stone-500">Ohlone Renegades Racing <span class="mx-2 text-renegade-gold">•</span> Formula SAE</footer>
+
+  <script>
+    // After deploying your Google Apps Script as a Web App, paste its /exec URL here.
+    // The script should read e.parameter.name, email, company, interest, and message.
+    const APPS_SCRIPT_URL = '';
+    const form = document.querySelector('#sponsor-form');
+    const status = document.querySelector('#form-status');
+    const button = document.querySelector('#submit-button');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      status.classList.remove('text-red-300', 'text-green-300');
+      if (!form.reportValidity()) return;
+      if (!APPS_SCRIPT_URL) {
+        status.textContent = 'The inquiry form is ready. Add your deployed Google Apps Script /exec URL in this page to enable submissions.';
+        status.classList.add('text-renegade-gold');
+        return;
+      }
+      button.disabled = true;
+      button.textContent = 'Sending…';
+      status.textContent = '';
+      try {
+        // URLSearchParams sends a simple form-encoded POST, avoiding a CORS preflight.
+        // Apps Script web apps return an opaque response to browser requests.
+        await fetch(APPS_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(new FormData(form)) });
+        form.reset();
+        status.textContent = 'Thanks for reaching out. Your inquiry was submitted; our team will follow up soon.';
+        status.classList.add('text-green-300');
+      } catch (error) {
+        status.textContent = 'We could not submit your inquiry. Please email ohlonerenegaderacing@yahoo.com.';
+        status.classList.add('text-red-300');
+      } finally {
+        button.disabled = false;
+        button.textContent = 'Send message';
+      }
+    });
+  </script>
+</body>
+</html>
