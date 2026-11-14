@@ -127,11 +127,22 @@
         <a href="#timeline" class="nav-link text-xs font-semibold tracking-widest uppercase text-stone-600 dark:text-stone-300 hover:text-renegade-green dark:hover:text-renegade-gold transition-colors">Timeline</a>
         <a href="#team" class="nav-link text-xs font-semibold tracking-widest uppercase text-stone-600 dark:text-stone-300 hover:text-renegade-green dark:hover:text-renegade-gold transition-colors">Team</a>
         <a href="#join" class="nav-link text-xs font-semibold tracking-widest uppercase text-stone-600 dark:text-stone-300 hover:text-renegade-green dark:hover:text-renegade-gold transition-colors">Join</a>
-        <a href="/sponsor/index.html" class="block py-1.5 text-xs font-semibold uppercase tracking-wider text-stone-700 dark:text-stone-200 hover:text-renegade-gold">Sponsor</a>
+        <a href="/sponsor/index.html" class="nav-link text-xs font-bold tracking-widest uppercase text-renegade-green dark:text-renegade-gold hover:text-renegade-goldHover transition-colors flex items-center gap-1">
+          <span>Sponsors</span>
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
       </nav>
 
-      <!-- Action Button & Mobile Menu Trigger -->
-      <div class="flex items-center gap-3">
+      <!-- Action Buttons & Mobile Menu Trigger -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a
+          href="/sponsor/index.html"
+          class="hidden sm:inline-flex items-center justify-center rounded-lg border border-renegade-green/30 dark:border-renegade-gold/50 hover:border-renegade-gold bg-transparent hover:bg-renegade-gold/10 text-renegade-green dark:text-renegade-gold font-display font-bold text-xs sm:text-sm tracking-wider uppercase px-3.5 py-2 transition-all"
+        >
+          Sponsor Us
+        </a>
         <a
           href="#join"
           class="inline-flex items-center justify-center rounded-lg bg-renegade-gold hover:bg-renegade-goldHover text-renegade-green font-display font-bold text-xs sm:text-sm tracking-wider uppercase px-4 py-2 shadow-sm transition-all transform hover:-translate-y-0.5"
@@ -142,6 +153,7 @@
           id="mobile-menu-btn"
           type="button"
           aria-label="Toggle Menu"
+          aria-expanded="false"
           class="md:hidden p-2 rounded-lg text-stone-700 dark:text-stone-200 hover:bg-stone-200/60 dark:hover:bg-renegade-greenMid focus:outline-none"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -152,22 +164,30 @@
     </div>
 
     <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-stone-200 dark:border-renegade-greenLight/50 bg-white/95 dark:bg-renegade-green/95 backdrop-blur-md px-6 py-3 space-y-2">
-      <a href="#about" class="block py-1.5 text-xs font-semibold uppercase tracking-wider text-stone-700 dark:text-stone-200 hover:text-renegade-gold">About</a>
-      <a href="#car" class="block py-1.5 text-xs font-semibold uppercase tracking-wider text-stone-700 dark:text-stone-200 hover:text-renegade-gold">The Car</a>
-      <a href="#timeline" class="block py-1.5 text-xs font-semibold uppercase tracking-wider text-stone-700 dark:text-stone-200 hover:text-renegade-gold">Timeline</a>
-      <a href="#team" class="block py-1.5 text-xs font-semibold uppercase tracking-wider text-stone-700 dark:text-stone-200 hover:text-renegade-gold">Team</a>
-      <a href="#join" class="block py-1.5 text-xs font-semibold uppercase tracking-wider text-stone-700 dark:text-stone-200 hover:text-renegade-gold">Join</a>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-stone-200 dark:border-renegade-greenLight/50 bg-white/95 dark:bg-renegade-green/95 backdrop-blur-md px-6 py-4 space-y-2.5">
+      <a href="#about" class="mobile-nav-link block py-1.5 text-xs font-semibold uppercase tracking-wider text-stone-700 dark:text-stone-200 hover:text-renegade-gold">About</a>
+      <a href="#car" class="mobile-nav-link block py-1.5 text-xs font-semibold uppercase tracking-wider text-stone-700 dark:text-stone-200 hover:text-renegade-gold">The Car</a>
+      <a href="#timeline" class="mobile-nav-link block py-1.5 text-xs font-semibold uppercase tracking-wider text-stone-700 dark:text-stone-200 hover:text-renegade-gold">Timeline</a>
+      <a href="#team" class="mobile-nav-link block py-1.5 text-xs font-semibold uppercase tracking-wider text-stone-700 dark:text-stone-200 hover:text-renegade-gold">Team</a>
+      <a href="#join" class="mobile-nav-link block py-1.5 text-xs font-semibold uppercase tracking-wider text-stone-700 dark:text-stone-200 hover:text-renegade-gold">Join</a>
+      <div class="pt-2 border-t border-stone-200 dark:border-renegade-greenLight/40">
+        <a href="/sponsor/index.html" class="flex items-center justify-between py-2 px-3 rounded-lg bg-renegade-gold/15 border border-renegade-gold/40 text-xs font-bold uppercase tracking-wider text-renegade-green dark:text-renegade-gold">
+          <span>Sponsor Page &amp; Tiers</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
     </div>
   </header>
 
-  <!-- COMPACT SPLIT HERO SECTION WITH FULL RIGHT-HALF VIDEO -->
+  <!-- HERO SECTION: DIMMED FULL-BLEED BACKGROUND VIDEO ON MOBILE, RIGHT-HALF VIDEO ON DESKTOP -->
   <section id="home" class="relative overflow-hidden bg-renegade-green text-white border-b border-renegade-gold/25">
-    <!-- Full Right-Half Video on Desktop -->
-    <div class="hidden lg:block absolute inset-y-0 right-0 w-1/2 overflow-hidden z-0">
+    <!-- Responsive Background Video Container:
+         - On mobile/tablet (< lg): covers full hero behind text & buttons (inset-0 w-full h-full)
+         - On desktop (>= lg): occupies the right half (lg:left-auto lg:right-0 lg:w-1/2) -->
+    <div class="absolute inset-0 lg:left-auto lg:right-0 lg:w-1/2 overflow-hidden z-0 pointer-events-none">
       <video
         id="hero-video"
-        class="w-full h-full object-cover"
+        class="w-full h-full object-cover opacity-35 sm:opacity-40 lg:opacity-100"
         autoplay
         loop
         muted
@@ -176,30 +196,36 @@
       >
         <source src="/assets/h_video.mp4" type="video/mp4" />
       </video>
-      <!-- Subtle edge blend into left half & bottom badge -->
-      <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-renegade-green to-transparent pointer-events-none"></div>
-      <div class="absolute inset-0 bg-renegade-green/15 pointer-events-none"></div>
+
+      <!-- Mobile/Tablet Dimming & Contrast Overlays so "Renegade Built" and buttons pop cleanly -->
+      <div class="lg:hidden absolute inset-0 bg-renegade-green/65"></div>
+      <div class="lg:hidden absolute inset-0 bg-gradient-to-t from-renegade-green via-renegade-green/40 to-renegade-green/75"></div>
+
+      <!-- Desktop Subtle Edge Blend into Left Half -->
+      <div class="hidden lg:block absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-renegade-green to-transparent"></div>
+      <div class="hidden lg:block absolute inset-0 bg-renegade-green/15"></div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         
-        <!-- Left Half: Compact Headline, CTAs & Stats -->
+        <!-- Left Half (Full Width over Dimmed Video on Mobile): Headline, CTAs & Stats -->
         <div class="lg:col-span-6 lg:pr-8">
           <div class="inline-flex items-center gap-2.5 mb-3">
             <span class="w-6 h-0.5 bg-renegade-gold"></span>
-            <span class="font-display font-bold text-xs tracking-[0.22em] uppercase text-renegade-gold">
+            <span class="font-display font-bold text-xs tracking-[0.22em] uppercase text-renegade-gold drop-shadow-sm">
               Formula SAE — Ohlone College — Fremont, CA
             </span>
           </div>
 
-          <h1 class="font-display font-black uppercase text-5xl sm:text-6xl xl:text-7xl leading-[0.92] tracking-tight mb-5">
+          <h1 class="font-display font-black uppercase text-5xl sm:text-6xl xl:text-7xl leading-[0.92] tracking-tight mb-6 drop-shadow">
             <span class="text-renegade-gold block">Renegade</span>
             <span class="text-white block">Built.</span>
             <span class="text-renegade-gold italic block">Race Ready.</span>
           </h1>
 
-          <div class="flex flex-wrap items-center gap-3 mb-7">
+          <!-- Primary Student & Car Actions -->
+          <div class="flex flex-wrap items-center gap-3 mb-3">
             <a
               href="#join"
               class="rounded-lg bg-renegade-gold hover:bg-renegade-goldHover text-renegade-green font-display font-extrabold text-sm tracking-wider uppercase px-6 py-3 shadow-md shadow-renegade-gold/20 transition-all transform hover:-translate-y-0.5"
@@ -208,33 +234,38 @@
             </a>
             <a
               href="#car"
-              class="rounded-lg border border-stone-400/50 hover:border-renegade-gold bg-renegade-greenMid/60 hover:bg-renegade-greenMid text-white hover:text-renegade-gold font-display font-bold text-sm tracking-wider uppercase px-6 py-3 transition-all"
+              class="rounded-lg border border-stone-300/50 hover:border-renegade-gold bg-renegade-green/70 lg:bg-renegade-greenMid/60 backdrop-blur-sm hover:bg-renegade-greenMid text-white hover:text-renegade-gold font-display font-bold text-sm tracking-wider uppercase px-6 py-3 transition-all"
             >
               Explore the Car
             </a>
           </div>
+
+          <!-- Clear Sponsor Page CTAs -->
           <div class="flex flex-wrap items-center gap-3 mb-7">
             <a
               href="/sponsor/index.html"
-              class="rounded-lg bg-renegade-gold hover:bg-renegade-goldHover text-renegade-green font-display font-extrabold text-sm tracking-wider uppercase px-6 py-3 shadow-md shadow-renegade-gold/20 transition-all transform hover:-translate-y-0.5"
+              class="inline-flex items-center gap-2 rounded-lg bg-white hover:bg-renegade-goldSoft text-renegade-green font-display font-extrabold text-sm tracking-wider uppercase px-6 py-3 shadow-md transition-all transform hover:-translate-y-0.5"
             >
-              Become a Sponsor
+              <span>Become a Sponsor</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
             </a>
             <a
-              href="#car"
-              class="rounded-lg border border-stone-400/50 hover:border-renegade-gold bg-renegade-greenMid/60 hover:bg-renegade-greenMid text-white hover:text-renegade-gold font-display font-bold text-sm tracking-wider uppercase px-6 py-3 transition-all"
+              href="/sponsor/index.html"
+              class="rounded-lg border border-renegade-gold/70 hover:border-renegade-gold bg-renegade-green/75 lg:bg-renegade-greenMid/70 backdrop-blur-sm hover:bg-renegade-gold/15 text-renegade-gold font-display font-bold text-sm tracking-wider uppercase px-5 py-3 transition-all"
             >
-              Put your Brand on the Car
+              Put Your Brand on the Car
             </a>
           </div>
 
           <!-- Compact Hero Stats Strip -->
-          <div class="pt-5 border-t border-white/15 grid grid-cols-3 gap-4 max-w-md">
+          <div class="pt-5 border-t border-white/20 grid grid-cols-3 gap-4 max-w-md">
             <div>
               <div class="font-display font-black text-2xl sm:text-3xl text-white leading-none">
                 420<span class="text-renegade-gold">+</span>
               </div>
-              <div class="text-[10px] font-semibold uppercase tracking-widest text-stone-300 mt-1">
+              <div class="text-[10px] font-semibold uppercase tracking-widest text-stone-200 mt-1">
                 Teams Worldwide
               </div>
             </div>
@@ -242,7 +273,7 @@
               <div class="font-display font-black text-2xl sm:text-3xl text-white leading-none">
                 1<span class="text-renegade-gold">st</span>
               </div>
-              <div class="text-[10px] font-semibold uppercase tracking-widest text-stone-300 mt-1">
+              <div class="text-[10px] font-semibold uppercase tracking-widest text-stone-200 mt-1">
                 Year for Ohlone
               </div>
             </div>
@@ -250,28 +281,12 @@
               <div class="font-display font-black text-2xl sm:text-3xl text-white leading-none">
                 14<span class="text-renegade-gold">mo</span>
               </div>
-              <div class="text-[10px] font-semibold uppercase tracking-widest text-stone-300 mt-1">
+              <div class="text-[10px] font-semibold uppercase tracking-widest text-stone-200 mt-1">
                 Build Timeline
               </div>
             </div>
           </div>
         </div>
-
-        <!-- Mobile/Tablet Video Fallback (Full Width on Smaller Screens)
-        <div class="lg:hidden">
-          <div class="relative rounded-xl overflow-hidden bg-renegade-greenMid border border-renegade-gold/35 shadow-xl aspect-video">
-            <video
-              class="w-full h-full object-cover"
-              autoplay
-              loop
-              muted
-              playsinline
-              preload="auto"
-            >
-              <source src="/assets/h_video.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </div> -->
 
       </div>
     </div>
@@ -286,9 +301,18 @@
           Ohlone College's first-ever Formula SAE team — Renegades designing, fabricating, and racing a full open-wheel prototype car from scratch in Fremont &amp; Newark, CA.
         </p>
       </div>
-      <span class="inline-block rounded-md bg-renegade-gold text-renegade-green font-display font-extrabold text-xs tracking-[0.2em] uppercase px-3 py-1 shrink-0">
-        Formula SAE — Year 1
-      </span>
+      <div class="flex flex-wrap items-center gap-2.5 shrink-0">
+        <a
+          href="/sponsor/index.html"
+          class="inline-flex items-center gap-1.5 rounded-md border border-renegade-gold/70 hover:bg-renegade-gold hover:text-renegade-green text-renegade-gold font-display font-bold text-xs tracking-[0.15em] uppercase px-3 py-1 transition-colors"
+        >
+          <span>Sponsor Info</span>
+          <span>&rarr;</span>
+        </a>
+        <span class="inline-block rounded-md bg-renegade-gold text-renegade-green font-display font-extrabold text-xs tracking-[0.2em] uppercase px-3 py-1">
+          Formula SAE — Year 1
+        </span>
+      </div>
     </div>
   </div>
 
@@ -311,17 +335,27 @@
           </p>
 
           <!-- Collapsible Trigger Button -->
-          <button
-            type="button"
-            onclick="toggleAccordion('about-more', this)"
-            aria-expanded="false"
-            class="inline-flex items-center gap-2 rounded-lg bg-renegade-green dark:bg-renegade-greenMid hover:bg-renegade-greenLight text-renegade-gold border border-renegade-gold/40 font-display font-bold text-xs tracking-widest uppercase px-4 py-2.5 transition-all shadow-sm"
-          >
-            <span class="btn-label">Learn More</span>
-            <svg class="w-4 h-4 transition-transform duration-300 btn-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
+          <div class="flex flex-wrap items-center gap-3">
+            <button
+              type="button"
+              onclick="toggleAccordion('about-more', this)"
+              aria-expanded="false"
+              class="inline-flex items-center gap-2 rounded-lg bg-renegade-green dark:bg-renegade-greenMid hover:bg-renegade-greenLight text-renegade-gold border border-renegade-gold/40 font-display font-bold text-xs tracking-widest uppercase px-4 py-2.5 transition-all shadow-sm"
+            >
+              <span class="btn-label">Learn More</span>
+              <svg class="w-4 h-4 transition-transform duration-300 btn-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            <a
+              href="/sponsor/index.html"
+              class="inline-flex items-center gap-1.5 rounded-lg border border-renegade-green/30 dark:border-renegade-gold/40 hover:border-renegade-gold text-renegade-green dark:text-renegade-gold font-display font-bold text-xs tracking-widest uppercase px-4 py-2.5 transition-all"
+            >
+              <span>Partner With Us</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
 
           <!-- Collapsible Long Paragraphs -->
           <div id="about-more" class="accordion-content mt-4">
@@ -372,22 +406,31 @@
     </div>
   </section>
 
-  <!-- THE CAR / SYSTEMS SECTION (Compact Cards so that users don't have to scroll) -->
+  <!-- THE CAR / SYSTEMS SECTION -->
   <section id="car" class="py-14 sm:py-20 bg-stone-100 dark:bg-renegade-greenMid/60 border-y border-stone-200 dark:border-renegade-greenLight/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl mb-10 reveal">
-        <div class="inline-flex items-center gap-2 mb-2">
-          <span class="w-4 h-0.5 bg-renegade-gold"></span>
-          <span class="font-display font-bold text-xs tracking-[0.25em] uppercase text-renegade-greenLight dark:text-renegade-gold">
-            The Car
-          </span>
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 reveal">
+        <div class="max-w-2xl">
+          <div class="inline-flex items-center gap-2 mb-2">
+            <span class="w-4 h-0.5 bg-renegade-gold"></span>
+            <span class="font-display font-bold text-xs tracking-[0.25em] uppercase text-renegade-greenLight dark:text-renegade-gold">
+              The Car
+            </span>
+          </div>
+          <h2 class="font-display font-black uppercase text-4xl sm:text-5xl leading-none text-renegade-green dark:text-white mb-3">
+            Six Systems. One Machine.
+          </h2>
+          <p class="text-sm sm:text-base text-stone-600 dark:text-stone-300 leading-relaxed">
+            Every subsystem is student-designed. No kit, no shortcut, and no precedent at Ohlone College.
+          </p>
         </div>
-        <h2 class="font-display font-black uppercase text-4xl sm:text-5xl leading-none text-renegade-green dark:text-white mb-3">
-          Six Systems. One Machine.
-        </h2>
-        <p class="text-sm sm:text-base text-stone-600 dark:text-stone-300 leading-relaxed">
-          Every subsystem is student-designed. No kit, no shortcut, and no precedent at Ohlone College.
-        </p>
+        <a
+          href="/sponsor/index.html"
+          class="inline-flex items-center gap-2 self-start md:self-auto rounded-lg bg-renegade-green dark:bg-renegade-green border border-renegade-gold/50 hover:border-renegade-gold text-renegade-gold font-display font-bold text-xs tracking-widest uppercase px-4 py-2.5 transition-all"
+        >
+          <span>Sponsor a Subsystem</span>
+          <span>&rarr;</span>
+        </a>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -460,7 +503,7 @@
     </div>
   </section>
 
-  <!-- TIMELINE SECTION -- from the previous website -->
+  <!-- TIMELINE SECTION -->
   <section id="timeline" class="py-14 sm:py-20">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="mb-10 reveal">
@@ -539,772 +582,204 @@
             Phase 5 &bull; Months 12–14
           </div>
           <h3 class="font-display font-extrabold text-xl uppercase text-renegade-green dark:text-white mb-1">
-            Competition
+            Competition &amp; Finale
           </h3>
           <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
-            FSAE Michigan or Lincoln. Static events (design, cost, business plan) and dynamic events (skidpad, autocross, acceleration, endurance).
+            Transport to FSAE Michigan/Lincoln, technical inspection, static design &amp; cost judging, and dynamic events (Acceleration, Skidpad, Autocross, Endurance).
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TEAM SECTION (Compact Cards again) -->
+  <!-- TEAM & SPONSORSHIP CALLOUT SECTION -->
   <section id="team" class="py-14 sm:py-20 bg-stone-100 dark:bg-renegade-greenMid/60 border-y border-stone-200 dark:border-renegade-greenLight/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl mb-10 reveal">
-        <div class="inline-flex items-center gap-2 mb-2">
-          <span class="w-4 h-0.5 bg-renegade-gold"></span>
-          <span class="font-display font-bold text-xs tracking-[0.25em] uppercase text-renegade-greenLight dark:text-renegade-gold">
-            The Team
-          </span>
-        </div>
-        <h2 class="font-display font-black uppercase text-4xl sm:text-5xl leading-none text-renegade-green dark:text-white mb-3">
-          The Renegades Building It
-        </h2>
-        <p class="text-sm sm:text-base text-stone-600 dark:text-stone-300 leading-relaxed">
-          Engineering, computer science, electrical, and business students from Ohlone College. Every person builds, designs, and competes.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="reveal rounded-xl bg-white dark:bg-renegade-green p-4 border border-stone-200 dark:border-renegade-greenLight/60 shadow-sm flex items-center gap-3.5">
-          <div class="w-10 h-10 rounded-lg bg-renegade-green text-renegade-gold font-display font-extrabold text-lg flex items-center justify-center shrink-0 border border-renegade-gold/40">
-            TL
-          </div>
-          <div>
-            <h3 class="font-display font-bold text-lg uppercase text-renegade-green dark:text-white leading-tight">Team Lead</h3>
-            <div class="text-[11px] font-semibold uppercase tracking-wider text-renegade-greenLight dark:text-renegade-gold">Program Director</div>
-            <div class="text-[11px] text-stone-500 dark:text-stone-400">Mechanical Engineering</div>
-          </div>
-        </div>
-
-        <div class="reveal delay-100 rounded-xl bg-white dark:bg-renegade-green p-4 border border-stone-200 dark:border-renegade-greenLight/60 shadow-sm flex items-center gap-3.5">
-          <div class="w-10 h-10 rounded-lg bg-renegade-green text-renegade-gold font-display font-extrabold text-lg flex items-center justify-center shrink-0 border border-renegade-gold/40">
-            CL
-          </div>
-          <div>
-            <h3 class="font-display font-bold text-lg uppercase text-renegade-green dark:text-white leading-tight">Chassis Lead</h3>
-            <div class="text-[11px] font-semibold uppercase tracking-wider text-renegade-greenLight dark:text-renegade-gold">Frame &amp; Structure</div>
-            <div class="text-[11px] text-stone-500 dark:text-stone-400">Mechanical Engineering</div>
-          </div>
-        </div>
-
-        <div class="reveal delay-200 rounded-xl bg-white dark:bg-renegade-green p-4 border border-stone-200 dark:border-renegade-greenLight/60 shadow-sm flex items-center gap-3.5">
-          <div class="w-10 h-10 rounded-lg bg-renegade-green text-renegade-gold font-display font-extrabold text-lg flex items-center justify-center shrink-0 border border-renegade-gold/40">
-            SL
-          </div>
-          <div>
-            <h3 class="font-display font-bold text-lg uppercase text-renegade-green dark:text-white leading-tight">Suspension Lead</h3>
-            <div class="text-[11px] font-semibold uppercase tracking-wider text-renegade-greenLight dark:text-renegade-gold">Geometry &amp; Dynamics</div>
-            <div class="text-[11px] text-stone-500 dark:text-stone-400">Mechanical Engineering</div>
-          </div>
-        </div>
-
-        <div class="reveal delay-300 rounded-xl bg-white dark:bg-renegade-green p-4 border border-stone-200 dark:border-renegade-greenLight/60 shadow-sm flex items-center gap-3.5">
-          <div class="w-10 h-10 rounded-lg bg-renegade-green text-renegade-gold font-display font-extrabold text-lg flex items-center justify-center shrink-0 border border-renegade-gold/40">
-            PL
-          </div>
-          <div>
-            <h3 class="font-display font-bold text-lg uppercase text-renegade-green dark:text-white leading-tight">Powertrain Lead</h3>
-            <div class="text-[11px] font-semibold uppercase tracking-wider text-renegade-greenLight dark:text-renegade-gold">Engine &amp; Drivetrain</div>
-            <div class="text-[11px] text-stone-500 dark:text-stone-400">Mechanical Engineering</div>
-          </div>
-        </div>
-
-        <div class="reveal rounded-xl bg-white dark:bg-renegade-green p-4 border border-stone-200 dark:border-renegade-greenLight/60 shadow-sm flex items-center gap-3.5">
-          <div class="w-10 h-10 rounded-lg bg-renegade-green text-renegade-gold font-display font-extrabold text-lg flex items-center justify-center shrink-0 border border-renegade-gold/40">
-            EL
-          </div>
-          <div>
-            <h3 class="font-display font-bold text-lg uppercase text-renegade-green dark:text-white leading-tight">Electronics Lead</h3>
-            <div class="text-[11px] font-semibold uppercase tracking-wider text-renegade-greenLight dark:text-renegade-gold">Wiring &amp; Data Systems</div>
-            <div class="text-[11px] text-stone-500 dark:text-stone-400">Electrical Engineering</div>
-          </div>
-        </div>
-
-        <div class="reveal delay-100 rounded-xl bg-white dark:bg-renegade-green p-4 border border-stone-200 dark:border-renegade-greenLight/60 shadow-sm flex items-center gap-3.5">
-          <div class="w-10 h-10 rounded-lg bg-renegade-green text-renegade-gold font-display font-extrabold text-lg flex items-center justify-center shrink-0 border border-renegade-gold/40">
-            SW
-          </div>
-          <div>
-            <h3 class="font-display font-bold text-lg uppercase text-renegade-green dark:text-white leading-tight">Software Lead</h3>
-            <div class="text-[11px] font-semibold uppercase tracking-wider text-renegade-greenLight dark:text-renegade-gold">Data, Sim &amp; Tools</div>
-            <div class="text-[11px] text-stone-500 dark:text-stone-400">Computer Science / Software</div>
-          </div>
-        </div>
-
-        <div class="reveal delay-200 rounded-xl bg-white dark:bg-renegade-green p-4 border border-stone-200 dark:border-renegade-greenLight/60 shadow-sm flex items-center gap-3.5">
-          <div class="w-10 h-10 rounded-lg bg-renegade-green text-renegade-gold font-display font-extrabold text-lg flex items-center justify-center shrink-0 border border-renegade-gold/40">
-            BM
-          </div>
-          <div>
-            <h3 class="font-display font-bold text-lg uppercase text-renegade-green dark:text-white leading-tight">Business Manager</h3>
-            <div class="text-[11px] font-semibold uppercase tracking-wider text-renegade-greenLight dark:text-renegade-gold">Sponsorship &amp; Finance</div>
-            <div class="text-[11px] text-stone-500 dark:text-stone-400">Business / Engineering</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- JOIN / ROLES SECTION WITH COLLAPSIBLE DETAILS & COMPACT CARDS -->
-  <section id="join" class="py-14 sm:py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-10 reveal">
-        <div class="lg:col-span-5">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 reveal">
           <div class="inline-flex items-center gap-2 mb-2">
             <span class="w-4 h-0.5 bg-renegade-gold"></span>
             <span class="font-display font-bold text-xs tracking-[0.25em] uppercase text-renegade-greenLight dark:text-renegade-gold">
-              Join the Team
+              The Team
             </span>
           </div>
-          <h2 class="font-display font-black uppercase text-4xl sm:text-5xl leading-none text-renegade-green dark:text-white">
-            Find Your Role on the <span class="text-renegade-gold">Renegades.</span>
+          <h2 class="font-display font-black uppercase text-4xl sm:text-5xl leading-none text-renegade-green dark:text-white mb-4">
+            Built by Students.<br />Backed by Industry.
           </h2>
-        </div>
-
-        <div class="lg:col-span-7">
-          <p class="text-sm sm:text-base text-stone-700 dark:text-stone-300 leading-relaxed mb-4">
-            We have roles for every background — engineers, fabricators, machinists, welders, electronics techs, business students, and creatives. <strong class="font-semibold text-renegade-green dark:text-white">No prior FSAE experience is required.</strong>
+          <p class="text-sm sm:text-base text-stone-600 dark:text-stone-300 leading-relaxed mb-6">
+            Our multidisciplinary roster spans mechanical engineering, computer science, business, and welding students across Ohlone College's Fremont and Newark campuses. Every dollar, part, and mentorship hour from our sponsors goes directly into student fabrication and competition logistics.
           </p>
-
-          <!-- Collapsible Trigger for Join Eligibility & Tracks -->
-          <button
-            type="button"
-            onclick="toggleAccordion('join-more', this)"
-            aria-expanded="false"
-            class="inline-flex items-center gap-2 rounded-lg bg-stone-200/80 dark:bg-renegade-greenMid hover:bg-stone-300/80 dark:hover:bg-renegade-greenLight text-renegade-green dark:text-renegade-gold border border-stone-300 dark:border-renegade-greenLight/60 font-display font-bold text-xs tracking-widest uppercase px-4 py-2 transition-all"
-          >
-            <span class="btn-label">Role Tracks &amp; Eligibility</span>
-            <svg class="w-4 h-4 transition-transform duration-300 btn-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-
-          <div id="join-more" class="accordion-content mt-3">
-            <div class="accordion-inner space-y-2.5 text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed border-l-2 border-renegade-gold pl-4">
-              <p>
-                Core technical roles involve direct work on the car's critical systems and require a brief calibration conversation with the system lead plus a four-week trial period. Contributor roles are open to any currently enrolled Ohlone student — you show up, you're on the team.
-              </p>
-              <p>
-                All team members must be currently enrolled at Ohlone College (minimum one unit). Anyone working in the shop must complete Ohlone's shop safety orientation. Drivers must hold a valid license and pass a team driver evaluation.
-              </p>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="rounded-lg bg-white dark:bg-renegade-green p-3 border border-stone-200 dark:border-renegade-greenLight/60">
+              <div class="font-display font-extrabold text-lg uppercase text-renegade-green dark:text-renegade-gold">Mechanical</div>
+              <div class="text-xs text-stone-500 dark:text-stone-400">CAD, FEA &amp; Welding</div>
+            </div>
+            <div class="rounded-lg bg-white dark:bg-renegade-green p-3 border border-stone-200 dark:border-renegade-greenLight/60">
+              <div class="font-display font-extrabold text-lg uppercase text-renegade-green dark:text-renegade-gold">Electrical</div>
+              <div class="text-xs text-stone-500 dark:text-stone-400">Harness &amp; Telemetry</div>
+            </div>
+            <div class="rounded-lg bg-white dark:bg-renegade-green p-3 border border-stone-200 dark:border-renegade-greenLight/60">
+              <div class="font-display font-extrabold text-lg uppercase text-renegade-green dark:text-renegade-gold">Aero</div>
+              <div class="text-xs text-stone-500 dark:text-stone-400">CFD &amp; Composites</div>
+            </div>
+            <div class="rounded-lg bg-white dark:bg-renegade-green p-3 border border-stone-200 dark:border-renegade-greenLight/60">
+              <div class="font-display font-extrabold text-lg uppercase text-renegade-green dark:text-renegade-gold">Business</div>
+              <div class="text-xs text-stone-500 dark:text-stone-400">Cost &amp; Partnerships</div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Filter Tabs -->
-      <div class="inline-flex rounded-lg p-1 bg-stone-200/80 dark:bg-renegade-greenMid border border-stone-300 dark:border-renegade-greenLight/60 mb-6 reveal">
-        <button
-          type="button"
-          class="tier-tab active rounded-md px-4 py-2 font-display font-bold text-xs tracking-wider uppercase transition-all bg-renegade-green text-renegade-gold shadow-sm"
-          onclick="showTier('core', this)"
-        >
-          Core Roles
-        </button>
-        <button
-          type="button"
-          class="tier-tab rounded-md px-4 py-2 font-display font-bold text-xs tracking-wider uppercase transition-all text-stone-600 dark:text-stone-300 hover:text-renegade-green dark:hover:text-white"
-          onclick="showTier('contrib', this)"
-        >
-          Contributor Roles
-        </button>
-        <button
-          type="button"
-          class="tier-tab rounded-md px-4 py-2 font-display font-bold text-xs tracking-wider uppercase transition-all text-stone-600 dark:text-stone-300 hover:text-renegade-green dark:hover:text-white"
-          onclick="showTier('all', this)"
-        >
-          All Roles
-        </button>
-      </div>
-
-      <!-- Compact Roles Grid -->
-      <div id="roles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-
-        <!-- CORE ROLE 1: Team Lead -->
-        <div class="role-card rounded-xl bg-white dark:bg-renegade-greenMid p-5 border border-stone-200 dark:border-renegade-greenLight/60 border-t-4 border-t-renegade-gold shadow-sm flex flex-col justify-between" data-tier="core">
-          <div>
-            <div class="flex items-start justify-between gap-2 mb-2.5">
-              <div>
-                <h3 class="font-display font-extrabold text-xl uppercase text-renegade-green dark:text-white leading-tight">Team Lead</h3>
-                <div class="text-[11px] font-semibold text-renegade-greenLight dark:text-renegade-gold">Program director &amp; point of contact</div>
-              </div>
-              <span class="rounded bg-renegade-gold/20 text-renegade-green dark:text-renegade-gold border border-renegade-gold/40 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 shrink-0">
-                Core
-              </span>
+        <!-- Dedicated Sponsor Card -->
+        <div class="lg:col-span-5 reveal delay-100">
+          <div class="rounded-2xl bg-renegade-green text-white p-6 sm:p-8 border border-renegade-gold/40 shadow-xl relative overflow-hidden">
+            <div class="inline-block rounded bg-renegade-gold/20 border border-renegade-gold/40 text-renegade-gold font-display font-bold text-[11px] tracking-[0.2em] uppercase px-2.5 py-1 mb-3">
+              Sponsorship Opportunities
             </div>
-            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mb-3">
-              Owns the overall program. Coordinates between system leads, manages master schedule, and drives external relationships.
+            <h3 class="font-display font-black uppercase text-3xl sm:text-4xl leading-none mb-3">
+              Fuel Ohlone's First Race Car
+            </h3>
+            <p class="text-xs sm:text-sm text-stone-300 leading-relaxed mb-6">
+              Explore our sponsorship tiers, see livery placement options on the chassis and wings, and connect directly with our student engineering leads.
             </p>
-            <ul class="space-y-1 text-xs text-stone-700 dark:text-stone-300 mb-4">
-              <li class="flex items-start gap-1.5"><span class="text-renegade-gold font-bold">&bull;</span>Run weekly lead &amp; monthly all-hands meetings</li>
-              <li class="flex items-start gap-1.5"><span class="text-renegade-gold font-bold">&bull;</span>Maintain master schedule and critical path</li>
-              <li class="flex items-start gap-1.5"><span class="text-renegade-gold font-bold">&bull;</span>Present business plan at static events</li>
-            </ul>
-          </div>
-          <div class="pt-3 border-t border-stone-200 dark:border-renegade-greenLight/50 grid grid-cols-3 gap-2 text-center">
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Hrs/Wk</div>
-              <div class="font-display font-bold text-sm text-renegade-green dark:text-white">8–12</div>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a
+                href="/sponsor/index.html"
+                class="inline-flex items-center justify-center gap-2 rounded-lg bg-renegade-gold hover:bg-renegade-goldHover text-renegade-green font-display font-extrabold text-sm tracking-wider uppercase px-5 py-3 shadow-md transition-all"
+              >
+                <span>View Sponsor Page</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </a>
             </div>
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Trial</div>
-              <div class="font-display font-bold text-sm text-renegade-green dark:text-white">6 Wks</div>
-            </div>
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Openings</div>
-              <div class="font-display font-bold text-sm text-renegade-gold">1</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CORE ROLE 2: Chassis Lead -->
-        <div class="role-card rounded-xl bg-white dark:bg-renegade-greenMid p-5 border border-stone-200 dark:border-renegade-greenLight/60 border-t-4 border-t-renegade-gold shadow-sm flex flex-col justify-between" data-tier="core">
-          <div>
-            <div class="flex items-start justify-between gap-2 mb-2.5">
-              <div>
-                <h3 class="font-display font-extrabold text-xl uppercase text-renegade-green dark:text-white leading-tight">Chassis Lead</h3>
-                <div class="text-[11px] font-semibold text-renegade-greenLight dark:text-renegade-gold">Frame, structure &amp; safety systems</div>
-              </div>
-              <span class="rounded bg-renegade-gold/20 text-renegade-green dark:text-renegade-gold border border-renegade-gold/40 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 shrink-0">
-                Core
-              </span>
-            </div>
-            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mb-3">
-              Designs and builds the backbone of the car. Owns the space frame from SolidWorks sketch to final TIG weld and FEA compliance.
-            </p>
-            <ul class="space-y-1 text-xs text-stone-700 dark:text-stone-300 mb-4">
-              <li class="flex items-start gap-1.5"><span class="text-renegade-gold font-bold">&bull;</span>Design chassis in SolidWorks Weldments &amp; run FEA</li>
-              <li class="flex items-start gap-1.5"><span class="text-renegade-gold font-bold">&bull;</span>Build chassis jig and oversee tube cutting/welding</li>
-              <li class="flex items-start gap-1.5"><span class="text-renegade-gold font-bold">&bull;</span>Ensure compliance with FSAE structural rules</li>
-            </ul>
-          </div>
-          <div class="pt-3 border-t border-stone-200 dark:border-renegade-greenLight/50 grid grid-cols-3 gap-2 text-center">
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Hrs/Wk</div>
-              <div class="font-display font-bold text-sm text-renegade-green dark:text-white">10–15</div>
-            </div>
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Trial</div>
-              <div class="font-display font-bold text-sm text-renegade-green dark:text-white">4 Wks</div>
-            </div>
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Openings</div>
-              <div class="font-display font-bold text-sm text-renegade-gold">1</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CORE ROLE 3: Suspension Lead -->
-        <div class="role-card rounded-xl bg-white dark:bg-renegade-greenMid p-5 border border-stone-200 dark:border-renegade-greenLight/60 border-t-4 border-t-renegade-gold shadow-sm flex flex-col justify-between" data-tier="core">
-          <div>
-            <div class="flex items-start justify-between gap-2 mb-2.5">
-              <div>
-                <h3 class="font-display font-extrabold text-xl uppercase text-renegade-green dark:text-white leading-tight">Suspension Lead</h3>
-                <div class="text-[11px] font-semibold text-renegade-greenLight dark:text-renegade-gold">Geometry, dynamics &amp; handling</div>
-              </div>
-              <span class="rounded bg-renegade-gold/20 text-renegade-green dark:text-renegade-gold border border-renegade-gold/40 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 shrink-0">
-                Core
-              </span>
-            </div>
-            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mb-3">
-              Defines how the car handles. Runs kinematic analysis in OptimumK, designs all four corners in CAD, and oversees upright machining.
-            </p>
-            <ul class="space-y-1 text-xs text-stone-700 dark:text-stone-300 mb-4">
-              <li class="flex items-start gap-1.5"><span class="text-renegade-gold font-bold">&bull;</span>Run kinematics in OptimumK &amp; design A-arms/hubs</li>
-              <li class="flex items-start gap-1.5"><span class="text-renegade-gold font-bold">&bull;</span>Coordinate CNC/manual machining of uprights</li>
-              <li class="flex items-start gap-1.5"><span class="text-renegade-gold font-bold">&bull;</span>Set alignment, ride height, and corner weights</li>
-            </ul>
-          </div>
-          <div class="pt-3 border-t border-stone-200 dark:border-renegade-greenLight/50 grid grid-cols-3 gap-2 text-center">
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Hrs/Wk</div>
-              <div class="font-display font-bold text-sm text-renegade-green dark:text-white">10–14</div>
-            </div>
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Trial</div>
-              <div class="font-display font-bold text-sm text-renegade-green dark:text-white">4 Wks</div>
-            </div>
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Openings</div>
-              <div class="font-display font-bold text-sm text-renegade-gold">1</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CORE ROLE 4: Powertrain Lead -->
-        <div class="role-card rounded-xl bg-white dark:bg-renegade-greenMid p-5 border border-stone-200 dark:border-renegade-greenLight/60 border-t-4 border-t-renegade-gold shadow-sm flex flex-col justify-between" data-tier="core">
-          <div>
-            <div class="flex items-start justify-between gap-2 mb-2.5">
-              <div>
-                <h3 class="font-display font-extrabold text-xl uppercase text-renegade-green dark:text-white leading-tight">Powertrain Lead</h3>
-                <div class="text-[11px] font-semibold text-renegade-greenLight dark:text-renegade-gold">Engine, intake, exhaust &amp; drivetrain</div>
-              </div>
-              <span class="rounded bg-renegade-gold/20 text-renegade-green dark:text-renegade-gold border border-renegade-gold/40 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 shrink-0">
-                Core
-              </span>
-            </div>
-            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mb-3">
-              Gets the car moving. Responsible for the Honda CBR engine rebuild, 20mm restrictor intake plenum, exhaust, and rear drivetrain.
-            </p>
-            <ul class="space-y-1 text-xs text-stone-700 dark:text-stone-300 mb-4">
-              <li class="flex items-start gap-1.5"><span class="text-renegade-gold font-bold">&bull;</span>Tear down, inspect, and rebuild Honda CBR engine</li>
-              <li class="flex items-start gap-1.5"><span class="text-renegade-gold font-bold">&bull;</span>Fabricate 20mm restrictor, intake &amp; exhaust</li>
-              <li class="flex items-start gap-1.5"><span class="text-renegade-gold font-bold">&bull;</span>Plumb fuel system &amp; configure ECU base map</li>
-            </ul>
-          </div>
-          <div class="pt-3 border-t border-stone-200 dark:border-renegade-greenLight/50 grid grid-cols-3 gap-2 text-center">
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Hrs/Wk</div>
-              <div class="font-display font-bold text-sm text-renegade-green dark:text-white">10–15</div>
-            </div>
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Trial</div>
-              <div class="font-display font-bold text-sm text-renegade-green dark:text-white">4 Wks</div>
-            </div>
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Openings</div>
-              <div class="font-display font-bold text-sm text-renegade-gold">1</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CORE ROLE 5: Electronics Lead -->
-        <div class="role-card rounded-xl bg-white dark:bg-renegade-greenMid p-5 border border-stone-200 dark:border-renegade-greenLight/60 border-t-4 border-t-renegade-gold shadow-sm flex flex-col justify-between" data-tier="core">
-          <div>
-            <div class="flex items-start justify-between gap-2 mb-2.5">
-              <div>
-                <h3 class="font-display font-extrabold text-xl uppercase text-renegade-green dark:text-white leading-tight">Electronics Lead</h3>
-                <div class="text-[11px] font-semibold text-renegade-greenLight dark:text-renegade-gold">Wiring, data acquisition &amp; safety</div>
-              </div>
-              <span class="rounded bg-renegade-gold/20 text-renegade-green dark:text-renegade-gold border border-renegade-gold/40 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 shrink-0">
-                Core
-              </span>
-            </div>
-            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mb-3">
-              Makes the car smart and safe. Designs the full wiring harness schematic, safety kill switches, and AiM MXS data acquisition system.
-            </p>
-            <ul class="space-y-1 text-xs text-stone-700 dark:text-stone-300 mb-4">
-              <li class="flex items-start gap-1.5"><span class="text-renegade-gold font-bold">&bull;</span>Design wiring schematic &amp; Deutsch DT harness</li>
-              <li class="flex items-start gap-1.5"><span class="text-renegade-gold font-bold">&bull;</span>Install master switch, kill switches &amp; fuse block</li>
-              <li class="flex items-start gap-1.5"><span class="text-renegade-gold font-bold">&bull;</span>Configure AiM dash, GPS, and wheel sensors</li>
-            </ul>
-          </div>
-          <div class="pt-3 border-t border-stone-200 dark:border-renegade-greenLight/50 grid grid-cols-3 gap-2 text-center">
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Hrs/Wk</div>
-              <div class="font-display font-bold text-sm text-renegade-green dark:text-white">8–12</div>
-            </div>
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Trial</div>
-              <div class="font-display font-bold text-sm text-renegade-green dark:text-white">4 Wks</div>
-            </div>
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Openings</div>
-              <div class="font-display font-bold text-sm text-renegade-gold">1</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CORE ROLE 6: Software Lead -->
-        <div class="role-card rounded-xl bg-white dark:bg-renegade-greenMid p-5 border border-stone-200 dark:border-renegade-greenLight/60 border-t-4 border-t-renegade-gold shadow-sm flex flex-col justify-between" data-tier="core">
-          <div>
-            <div class="flex items-start justify-between gap-2 mb-2.5">
-              <div>
-                <h3 class="font-display font-extrabold text-xl uppercase text-renegade-green dark:text-white leading-tight">Software Lead</h3>
-                <div class="text-[11px] font-semibold text-renegade-greenLight dark:text-renegade-gold">Data analysis, simulation &amp; tools</div>
-              </div>
-              <span class="rounded bg-renegade-gold/20 text-renegade-green dark:text-renegade-gold border border-renegade-gold/40 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 shrink-0">
-                Core
-              </span>
-            </div>
-            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mb-3">
-              Makes the team faster through code. Builds lap simulation models, analyzes AiM telemetry logs, and maintains team automation tools.
-            </p>
-            <ul class="space-y-1 text-xs text-stone-700 dark:text-stone-300 mb-4">
-              <li class="flex items-start gap-1.5"><span class="text-renegade-gold font-bold">&bull;</span>Build lap simulation models in Python or MATLAB</li>
-              <li class="flex items-start gap-1.5"><span class="text-renegade-gold font-bold">&bull;</span>Write telemetry analysis scripts for AiM logs</li>
-              <li class="flex items-start gap-1.5"><span class="text-renegade-gold font-bold">&bull;</span>Configure MegaSquirt ECU &amp; GitHub repo tools</li>
-            </ul>
-          </div>
-          <div class="pt-3 border-t border-stone-200 dark:border-renegade-greenLight/50 grid grid-cols-3 gap-2 text-center">
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Hrs/Wk</div>
-              <div class="font-display font-bold text-sm text-renegade-green dark:text-white">5–10</div>
-            </div>
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Trial</div>
-              <div class="font-display font-bold text-sm text-renegade-green dark:text-white">4 Wks</div>
-            </div>
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Openings</div>
-              <div class="font-display font-bold text-sm text-renegade-gold">1–2</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CONTRIBUTOR ROLES -->
-        <div class="role-card hidden rounded-xl bg-white dark:bg-renegade-greenMid p-5 border border-stone-200 dark:border-renegade-greenLight/60 border-t-4 border-t-renegade-greenLight shadow-sm flex-col justify-between" data-tier="contrib">
-          <div>
-            <div class="flex items-start justify-between gap-2 mb-2.5">
-              <div>
-                <h3 class="font-display font-extrabold text-xl uppercase text-renegade-green dark:text-white leading-tight">CAD Designer</h3>
-                <div class="text-[11px] font-semibold text-renegade-greenLight dark:text-renegade-gold">SolidWorks modeling &amp; drawings</div>
-              </div>
-              <span class="rounded bg-renegade-greenLight/15 dark:bg-renegade-greenLight/40 text-renegade-greenLight dark:text-stone-200 border border-renegade-greenLight/30 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 shrink-0">
-                Contributor
-              </span>
-            </div>
-            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mb-3">
-              Supports system leads with SolidWorks part modeling, assembly integration, FEA setup, and dimensioned fabrication drawings.
-            </p>
-            <ul class="space-y-1 text-xs text-stone-700 dark:text-stone-300 mb-4">
-              <li class="flex items-start gap-1.5"><span class="text-renegade-greenLight dark:text-renegade-gold font-bold">&bull;</span>Model components in SolidWorks under lead guidance</li>
-              <li class="flex items-start gap-1.5"><span class="text-renegade-greenLight dark:text-renegade-gold font-bold">&bull;</span>Generate dimensioned fabrication drawings</li>
-              <li class="flex items-start gap-1.5"><span class="text-renegade-greenLight dark:text-renegade-gold font-bold">&bull;</span>Maintain GrabCAD assembly version control</li>
-            </ul>
-          </div>
-          <div class="pt-3 border-t border-stone-200 dark:border-renegade-greenLight/50 grid grid-cols-3 gap-2 text-center">
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Hrs/Wk</div>
-              <div class="font-display font-bold text-sm text-renegade-green dark:text-white">3–8</div>
-            </div>
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Trial</div>
-              <div class="font-display font-bold text-sm text-renegade-green dark:text-white">None</div>
-            </div>
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Openings</div>
-              <div class="font-display font-bold text-sm text-renegade-gold">3–5</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="role-card hidden rounded-xl bg-white dark:bg-renegade-greenMid p-5 border border-stone-200 dark:border-renegade-greenLight/60 border-t-4 border-t-renegade-greenLight shadow-sm flex-col justify-between" data-tier="contrib">
-          <div>
-            <div class="flex items-start justify-between gap-2 mb-2.5">
-              <div>
-                <h3 class="font-display font-extrabold text-xl uppercase text-renegade-green dark:text-white leading-tight">Fabrication Tech</h3>
-                <div class="text-[11px] font-semibold text-renegade-greenLight dark:text-renegade-gold">Shop support, welding &amp; machining</div>
-              </div>
-              <span class="rounded bg-renegade-greenLight/15 dark:bg-renegade-greenLight/40 text-renegade-greenLight dark:text-stone-200 border border-renegade-greenLight/30 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 shrink-0">
-                Contributor
-              </span>
-            </div>
-            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mb-3">
-              Hands-on build support in the shop. Tube cutting, deburring, composite layups, hardware installation, and shop organization.
-            </p>
-            <ul class="space-y-1 text-xs text-stone-700 dark:text-stone-300 mb-4">
-              <li class="flex items-start gap-1.5"><span class="text-renegade-greenLight dark:text-renegade-gold font-bold">&bull;</span>Cut, prep, and stage tubes and sheet metal</li>
-              <li class="flex items-start gap-1.5"><span class="text-renegade-greenLight dark:text-renegade-gold font-bold">&bull;</span>Perform fiberglass/carbon layups for aero</li>
-              <li class="flex items-start gap-1.5"><span class="text-renegade-greenLight dark:text-renegade-gold font-bold">&bull;</span>Shop safety orientation is the only prerequisite</li>
-            </ul>
-          </div>
-          <div class="pt-3 border-t border-stone-200 dark:border-renegade-greenLight/50 grid grid-cols-3 gap-2 text-center">
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Hrs/Wk</div>
-              <div class="font-display font-bold text-sm text-renegade-green dark:text-white">2–8</div>
-            </div>
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Trial</div>
-              <div class="font-display font-bold text-sm text-renegade-green dark:text-white">None</div>
-            </div>
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Openings</div>
-              <div class="font-display font-bold text-sm text-renegade-gold">Open</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="role-card hidden rounded-xl bg-white dark:bg-renegade-greenMid p-5 border border-stone-200 dark:border-renegade-greenLight/60 border-t-4 border-t-renegade-greenLight shadow-sm flex-col justify-between" data-tier="contrib">
-          <div>
-            <div class="flex items-start justify-between gap-2 mb-2.5">
-              <div>
-                <h3 class="font-display font-extrabold text-xl uppercase text-renegade-green dark:text-white leading-tight">Driver &amp; Media</h3>
-                <div class="text-[11px] font-semibold text-renegade-greenLight dark:text-renegade-gold">Testing, documentation &amp; outreach</div>
-              </div>
-              <span class="rounded bg-renegade-greenLight/15 dark:bg-renegade-greenLight/40 text-renegade-greenLight dark:text-stone-200 border border-renegade-greenLight/30 font-display font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 shrink-0">
-                Contributor
-              </span>
-            </div>
-            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mb-3">
-              Compete behind the wheel during testing/endurance or document our journey via technical design reports, photo/video, and socials.
-            </p>
-            <ul class="space-y-1 text-xs text-stone-700 dark:text-stone-300 mb-4">
-              <li class="flex items-start gap-1.5"><span class="text-renegade-greenLight dark:text-renegade-gold font-bold">&bull;</span>Drivers: valid license + team driver evaluation</li>
-              <li class="flex items-start gap-1.5"><span class="text-renegade-greenLight dark:text-renegade-gold font-bold">&bull;</span>Docs: compile FSAE design &amp; cost reports</li>
-              <li class="flex items-start gap-1.5"><span class="text-renegade-greenLight dark:text-renegade-gold font-bold">&bull;</span>Media: photo/video coverage &amp; GitHub updates</li>
-            </ul>
-          </div>
-          <div class="pt-3 border-t border-stone-200 dark:border-renegade-greenLight/50 grid grid-cols-3 gap-2 text-center">
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Hrs/Wk</div>
-              <div class="font-display font-bold text-sm text-renegade-green dark:text-white">2–5</div>
-            </div>
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Trial</div>
-              <div class="font-display font-bold text-sm text-renegade-green dark:text-white">Eval / Open</div>
-            </div>
-            <div>
-              <div class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400">Openings</div>
-              <div class="font-display font-bold text-sm text-renegade-gold">3–5</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Compact How Joining Works -->
-      <div class="reveal rounded-xl bg-stone-100 dark:bg-renegade-greenMid p-6 border border-stone-200 dark:border-renegade-greenLight/60 border-l-4 border-l-renegade-gold">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-          <h3 class="font-display font-extrabold text-xl uppercase text-renegade-green dark:text-white">
-            How Joining Works
-          </h3>
-          <span class="text-xs text-stone-500 dark:text-stone-400">Four-step core onboarding path</span>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div>
-            <div class="font-display font-bold text-[11px] tracking-[0.2em] text-renegade-gold">STEP 01</div>
-            <div class="font-display font-bold text-base uppercase text-renegade-green dark:text-white mb-0.5">Show Up</div>
-            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">Attend a weekly team meeting on the Ohlone Fremont campus or reach out on our socials.</p>
-          </div>
-          <div>
-            <div class="font-display font-bold text-[11px] tracking-[0.2em] text-renegade-gold">STEP 02</div>
-            <div class="font-display font-bold text-base uppercase text-renegade-green dark:text-white mb-0.5">Calibration Talk</div>
-            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">Have a relaxed 30-minute chat with the system lead to match your skills and schedule.</p>
-          </div>
-          <div>
-            <div class="font-display font-bold text-[11px] tracking-[0.2em] text-renegade-gold">STEP 03</div>
-            <div class="font-display font-bold text-base uppercase text-renegade-green dark:text-white mb-0.5">Trial Period</div>
-            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">Take on real, meaningful engineering or shop tasks for 4–6 weeks alongside the crew.</p>
-          </div>
-          <div>
-            <div class="font-display font-bold text-[11px] tracking-[0.2em] text-renegade-gold">STEP 04</div>
-            <div class="font-display font-bold text-base uppercase text-renegade-green dark:text-white mb-0.5">Full Member</div>
-            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">Earn your official role, help complete the car, and travel with the Renegades to FSAE.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
-<a href="/sponsor/index.html" class="flex items-center gap-3 group focus:outline-none">
-        <div class="relative w-10 h-10 rounded-full overflow-hidden shadow-sm ring-2 ring-renegade-gold/60 group-hover:ring-renegade-gold transition-all bg-renegade-green flex items-center justify-center shrink-0">
-          <img
-            src="/assets/renegades-logo.png"
-            alt="Ohlone Renegades Racing Logo"
-            class="w-full h-full object-cover"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-          />
-          <svg style="display:none;" viewBox="0 0 200 200" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="100" cy="100" r="100" fill="#0B2318"/>
-            <path d="M44 82 C75 65, 115 56, 132 61 C141 64, 134 75, 118 82 L96 92 C118 87, 152 80, 174 79 C145 87, 108 97, 87 99 C79 100, 81 92, 92 86 L112 75 C119 71, 115 68, 104 70 C82 74, 62 79, 44 82 Z" fill="#F2A91E"/>
-            <path d="M56 109 L76 79 L93 76 L67 104 Z" fill="#F2A91E"/>
-            <text x="100" y="133" text-anchor="middle" fill="#F2A91E" font-family="Arial Black, sans-serif" font-weight="900" font-style="italic" font-size="22" letter-spacing="5">BECOME A SPONSOR</text>
-            <text x="100" y="151" text-anchor="middle" fill="#F2A91E" font-family="Arial, sans-serif" font-weight="700" font-style="italic" font-size="11" letter-spacing="5"> - Put Your Brand On The Car</text>
-          </svg>
-        </div>
-        <div class="flex flex-col">
-          <span class="font-display font-extrabold text-xl tracking-wider uppercase leading-none text-renegade-green dark:text-white">
-            Support <span class="text-renegade-gold">Ohlone Racing</span>
-          </span>
-          <span class="text-[10px] font-semibold tracking-[0.2em] uppercase text-renegade-greenLight dark:text-stone-300 mt-0.5">
-            Learn More
-          </span>
-        </div>
-      </a>
-  <!-- FOOTER WITH GITHUB, FACEBOOK, AND YOUTUBE LINKS -->
-  <footer class="bg-renegade-green text-stone-300 border-t border-renegade-greenLight/60">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-6 border-b border-renegade-greenLight/50">
-        <!-- Brand Info -->
-        <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-full overflow-hidden ring-2 ring-renegade-gold/60 bg-renegade-green flex items-center justify-center shrink-0">
-            <img
-              src="/assets/renegades-logo.png"
-              alt="Ohlone Renegades Racing Logo"
-              class="w-full h-full object-cover"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-            />
-            <svg style="display:none;" viewBox="0 0 200 200" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="100" cy="100" r="100" fill="#0B2318"/>
-              <path d="M44 82 C75 65, 115 56, 132 61 C141 64, 134 75, 118 82 L96 92 C118 87, 152 80, 174 79 C145 87, 108 97, 87 99 C79 100, 81 92, 92 86 L112 75 C119 71, 115 68, 104 70 C82 74, 62 79, 44 82 Z" fill="#F2A91E"/>
-              <path d="M56 109 L76 79 L93 76 L67 104 Z" fill="#F2A91E"/>
-            </svg>
-          </div>
-          <div>
-            <a href="#home" class="font-display font-extrabold text-lg tracking-wider uppercase text-white">
-              Ohlone <span class="text-renegade-gold">Racing</span> <span class="text-stone-400 font-normal">/ Renegades FSAE</span>
-            </a>
-            <p class="text-xs text-stone-400">
-              Ohlone College &mdash; 43600 Mission Blvd, Fremont, CA 94539
-            </p>
-          </div>
-        </div>
 
-        <!-- Social Links: GitHub, Facebook, YouTube -->
-        <div class="flex items-center gap-3">
-          <a
-            href="https://github.com/ohlonefsae/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Ohlone Renegades Racing on GitHub"
-            class="group flex items-center gap-2 rounded-lg bg-renegade-greenMid hover:bg-renegade-gold text-stone-200 hover:text-renegade-green px-3.5 py-2 border border-renegade-greenLight/60 hover:border-renegade-gold transition-all"
-          >
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-            </svg>
-            <span class="font-display font-bold text-xs tracking-wider uppercase">GitHub</span>
-          </a>
-
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Ohlone Renegades Racing on Facebook"
-            class="group flex items-center gap-2 rounded-lg bg-renegade-greenMid hover:bg-renegade-gold text-stone-200 hover:text-renegade-green px-3.5 py-2 border border-renegade-greenLight/60 hover:border-renegade-gold transition-all"
-          >
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
-            </svg>
-            <span class="font-display font-bold text-xs tracking-wider uppercase">Facebook</span>
-          </a>
-          <!-- There are currently no links for facebook or youtube -->
-          <a
-            href="https://youtube.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Ohlone Renegades Racing on YouTube"
-            class="group flex items-center gap-2 rounded-lg bg-renegade-greenMid hover:bg-renegade-gold text-stone-200 hover:text-renegade-green px-3.5 py-2 border border-renegade-greenLight/60 hover:border-renegade-gold transition-all"
-          >
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-            </svg>
-            <span class="font-display font-bold text-xs tracking-wider uppercase">YouTube</span>
-          </a>
-        </div>
+  <!-- JOIN SECTION -->
+  <section id="join" class="py-14 sm:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <div class="inline-flex items-center gap-2 mb-2">
+        <span class="w-4 h-0.5 bg-renegade-gold"></span>
+        <span class="font-display font-bold text-xs tracking-[0.25em] uppercase text-renegade-greenLight dark:text-renegade-gold">
+          Get Involved
+        </span>
+        <span class="w-4 h-0.5 bg-renegade-gold"></span>
       </div>
+      <h2 class="font-display font-black uppercase text-4xl sm:text-5xl leading-none text-renegade-green dark:text-white mb-4">
+        Ready to Build With Us?
+      </h2>
+      <p class="text-sm sm:text-base text-stone-600 dark:text-stone-300 max-w-2xl mx-auto leading-relaxed mb-8">
+        No prior racing or shop experience required — just curiosity and commitment. Whether you are an Ohlone student looking to join a subteam or an organization looking to sponsor, take the next step below.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="mailto:contact@ohloneracing.org?subject=Joining%20Ohlone%20Renegades%20Racing"
+          class="rounded-lg bg-renegade-gold hover:bg-renegade-goldHover text-renegade-green font-display font-extrabold text-sm tracking-wider uppercase px-7 py-3.5 shadow-md transition-all transform hover:-translate-y-0.5"
+        >
+          Apply as a Student
+        </a>
+        <a
+          href="/sponsor/index.html"
+          class="rounded-lg bg-renegade-green dark:bg-renegade-greenMid hover:bg-renegade-greenLight text-white hover:text-renegade-gold border border-renegade-gold/50 font-display font-extrabold text-sm tracking-wider uppercase px-7 py-3.5 shadow-md transition-all transform hover:-translate-y-0.5"
+        >
+          Become a Sponsor &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
 
-      <!-- Bottom Copyright and Quick Section Links, because it is useful -->
-      <div class="pt-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-stone-400">
-        <p>
-          &copy; 2026 Ohlone Renegades Racing &middot; All Rights Reserved.
-        </p>
-        <div class="flex flex-wrap gap-5 uppercase tracking-wider font-semibold">
-          <a href="#about" class="hover:text-renegade-gold transition-colors">About</a>
-          <a href="#car" class="hover:text-renegade-gold transition-colors">The Car</a>
-          <a href="#timeline" class="hover:text-renegade-gold transition-colors">Timeline</a>
-          <a href="#team" class="hover:text-renegade-gold transition-colors">Team</a>
-          <a href="#join" class="hover:text-renegade-gold transition-colors">Join</a>
+  <!-- FOOTER -->
+  <footer class="bg-renegade-green text-stone-300 border-t border-renegade-gold/25 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="text-center sm:text-left">
+        <div class="font-display font-extrabold text-lg uppercase tracking-wider text-white">
+          Ohlone <span class="text-renegade-gold">Renegades</span> Racing
         </div>
+        <p class="text-xs text-stone-400 mt-1">
+          Formula SAE Collegiate Design Team &bull; Ohlone College &bull; Fremont &amp; Newark, CA
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-6 text-xs font-semibold uppercase tracking-wider">
+        <a href="#about" class="hover:text-renegade-gold transition-colors">About</a>
+        <a href="#car" class="hover:text-renegade-gold transition-colors">The Car</a>
+        <a href="#timeline" class="hover:text-renegade-gold transition-colors">Timeline</a>
+        <a href="#join" class="hover:text-renegade-gold transition-colors">Join</a>
+        <a href="/sponsor/index.html" class="text-renegade-gold hover:text-renegade-goldHover underline underline-offset-4 transition-colors">Sponsors</a>
       </div>
     </div>
   </footer>
 
+  <!-- INTERACTIVITY SCRIPTS -->
   <script>
-    // Collapsible Accordion Toggle
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+
+      // Close mobile menu when a link is clicked
+      document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // Accordion toggle for collapsible sections
     function toggleAccordion(targetId, btn) {
       const content = document.getElementById(targetId);
       if (!content) return;
+
       const isOpen = content.classList.toggle('open');
-      btn.setAttribute('aria-expanded', isOpen);
-      const icon = btn.querySelector('.btn-icon');
+      btn.setAttribute('aria-expanded', String(isOpen));
+
       const label = btn.querySelector('.btn-label');
+      const icon = btn.querySelector('.btn-icon');
+      if (label) {
+        label.textContent = isOpen ? 'Show Less' : 'Learn More';
+      }
       if (icon) {
         icon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
       }
-      if (label && targetId === 'about-more') {
-        label.textContent = isOpen ? 'Show Less' : 'Learn More';
-      }
     }
 
-    // Smooth scrolling for all internal anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href');
-        if (targetId.length > 1) {
-          const targetEl = document.querySelector(targetId);
-          if (targetEl) {
-            e.preventDefault();
-            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }
-      });
-    });
-
-    // Mobile navigation toggle
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileBtn && mobileMenu) {
-      mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-      mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-      });
+    // Scroll reveal observer
+    const revealElements = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      revealElements.forEach((el) => observer.observe(el));
+    } else {
+      revealElements.forEach((el) => el.classList.add('active'));
     }
 
-    // Role filter tabs
-    function showTier(tier, btn) {
-      document.querySelectorAll('.tier-tab').forEach(b => {
-        b.classList.remove('active', 'bg-renegade-green', 'text-renegade-gold', 'shadow-sm');
-        b.classList.add('text-stone-600', 'dark:text-stone-300');
-      });
-      btn.classList.add('active', 'bg-renegade-green', 'text-renegade-gold', 'shadow-sm');
-      btn.classList.remove('text-stone-600', 'dark:text-stone-300');
-
-      document.querySelectorAll('.role-card').forEach(card => {
-        const matches = tier === 'all' || card.dataset.tier === tier;
-        if (matches) {
-          card.classList.remove('hidden');
-          card.classList.add('flex');
-        } else {
-          card.classList.add('hidden');
-          card.classList.remove('flex');
-        }
-      });
-    }
-
-    // Intersection Observer for smooth scroll-reveal animations
+    // Ensure background video autoplays smoothly on mobile devices
     document.addEventListener('DOMContentLoaded', () => {
-      const revealElements = document.querySelectorAll('.reveal');
-      if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
-        );
-        revealElements.forEach((el) => observer.observe(el));
-      } else {
-        revealElements.forEach((el) => el.classList.add('active'));
+      const heroVideo = document.getElementById('hero-video');
+      if (heroVideo) {
+        heroVideo.muted = true;
+        heroVideo.play().catch(() => {
+          // Autoplay fallback handled silently if browser restricts playback
+        });
       }
     });
-
-    // Active nav link highlight on scroll
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach((section) => {
-        if (window.scrollY >= section.offsetTop - 120) {
-          current = section.id;
-        }
-      });
-      navLinks.forEach((link) => {
-        if (link.getAttribute('href') === '#' + current) {
-          link.classList.add('text-renegade-gold', 'dark:text-renegade-gold');
-        } else {
-          link.classList.remove('text-renegade-gold', 'dark:text-renegade-gold');
-        }
-      });
-    }, { passive: true });
   </script>
 </body>
 </html>
