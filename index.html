@@ -179,118 +179,140 @@
     </div>
   </header>
 
-  <!-- HERO SECTION: DIMMED FULL-BLEED BACKGROUND VIDEO ON MOBILE, RIGHT-HALF VIDEO ON DESKTOP -->
-  <section id="home" class="relative overflow-hidden bg-renegade-green text-white border-b border-renegade-gold/25">
-    <!-- Responsive Background Video Container:
-         - On mobile/tablet (< lg): covers full hero behind text & buttons (inset-0 w-full h-full)
-         - On desktop (>= lg): occupies the right half (lg:left-auto lg:right-0 lg:w-1/2) -->
-    <div class="absolute inset-0 lg:left-auto lg:right-0 lg:w-1/2 overflow-hidden z-0 pointer-events-none">
-      <video
-        id="hero-video"
-        class="w-full h-full object-cover opacity-35 sm:opacity-40 lg:opacity-100"
-        autoplay
-        loop
-        muted
-        playsinline
-        preload="auto"
-      >
-        <source src="/assets/h_video.mp4" type="video/mp4" />
-      </video>
+<!-- HERO SECTION: DIMMED FULL-BLEED BACKGROUND VIDEO ON MOBILE, RIGHT-HALF VIDEO ON DESKTOP -->
+<section id="home" class="relative overflow-hidden bg-renegade-green text-white border-b border-renegade-gold/25">
+  
+  <!-- Responsive Background Video Container -->
+  <div class="absolute inset-0 lg:left-auto lg:right-0 lg:w-1/2 overflow-hidden z-0 pointer-events-none select-none">
+    <!-- Note: Remove leading slash if your assets folder is relative to index.html (e.g., src="assets/h_video.mp4") -->
+    <video
+      id="hero-video"
+      src="/assets/h_video.mp4"
+      class="w-full h-full object-cover object-center opacity-50 lg:opacity-100"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="metadata"
+    ></video>
 
-      <!-- Mobile/Tablet Dimming & Contrast Overlays so "Renegade Built" and buttons pop cleanly -->
-      <div class="lg:hidden absolute inset-0 bg-renegade-green/65"></div>
-      <div class="lg:hidden absolute inset-0 bg-gradient-to-t from-renegade-green via-renegade-green/40 to-renegade-green/75"></div>
+    <!-- Mobile/Tablet Contrast Overlay (Single clean gradient instead of double-stacking) -->
+    <div 
+      class="lg:hidden absolute inset-0 bg-gradient-to-t from-renegade-green via-renegade-green/75 to-renegade-green/60"
+      aria-hidden="true"
+    ></div>
 
-      <!-- Desktop Subtle Edge Blend into Left Half -->
-      <div class="hidden lg:block absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-renegade-green to-transparent"></div>
-      <div class="hidden lg:block absolute inset-0 bg-renegade-green/15"></div>
-    </div>
+    <!-- Desktop Edge Blend into Left Half -->
+    <div 
+      class="hidden lg:block absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-renegade-green via-renegade-green/60 to-transparent"
+      aria-hidden="true"
+    ></div>
+  </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        
-        <!-- Left Half (Full Width over Dimmed Video on Mobile): Headline, CTAs & Stats -->
-        <div class="lg:col-span-6 lg:pr-8">
-          <div class="inline-flex items-center gap-2.5 mb-3">
-            <span class="w-6 h-0.5 bg-renegade-gold"></span>
-            <span class="font-display font-bold text-xs tracking-[0.22em] uppercase text-renegade-gold drop-shadow-sm">
-              Formula SAE — Ohlone College — Fremont, CA
-            </span>
-          </div>
+  <!-- Foreground Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      
+      <div class="lg:col-span-6 lg:pr-8">
+        <!-- Eyebrow Tag -->
+        <div class="inline-flex items-center gap-2.5 mb-3">
+          <span class="w-6 h-0.5 bg-renegade-gold"></span>
+          <span class="font-display font-bold text-xs tracking-[0.22em] uppercase text-renegade-gold drop-shadow-sm">
+            Formula SAE — Ohlone College — Fremont, CA
+          </span>
+        </div>
 
-          <h1 class="font-display font-black uppercase text-5xl sm:text-6xl xl:text-7xl leading-[0.92] tracking-tight mb-6 drop-shadow">
-            <span class="text-renegade-gold block">Renegade</span>
-            <span class="text-white block">Built.</span>
-            <span class="text-renegade-gold italic block">Race Ready.</span>
-          </h1>
+        <!-- Headline -->
+        <h1 class="font-display font-black uppercase text-5xl sm:text-6xl xl:text-7xl leading-[0.92] tracking-tight mb-6 drop-shadow">
+          <span class="text-renegade-gold block">Renegade</span>
+          <span class="text-white block">Built.</span>
+          <span class="text-renegade-gold italic block">Race Ready.</span>
+        </h1>
 
-          <!-- Primary Student & Car Actions -->
-          <div class="flex flex-wrap items-center gap-3 mb-3">
-            <a
-              href="#join"
-              class="rounded-lg bg-renegade-gold hover:bg-renegade-goldHover text-renegade-green font-display font-extrabold text-sm tracking-wider uppercase px-6 py-3 shadow-md shadow-renegade-gold/20 transition-all transform hover:-translate-y-0.5"
-            >
-              Join the Team
-            </a>
-            <a
-              href="#car"
-              class="rounded-lg border border-stone-300/50 hover:border-renegade-gold bg-renegade-green/70 lg:bg-renegade-greenMid/60 backdrop-blur-sm hover:bg-renegade-greenMid text-white hover:text-renegade-gold font-display font-bold text-sm tracking-wider uppercase px-6 py-3 transition-all"
-            >
-              Explore the Car
-            </a>
-          </div>
+        <!-- Primary Student & Car Actions -->
+        <div class="flex flex-wrap items-center gap-3 mb-3">
+          <a
+            href="#join"
+            class="rounded-lg bg-renegade-gold hover:bg-renegade-goldHover text-renegade-green font-display font-extrabold text-sm tracking-wider uppercase px-6 py-3 shadow-md shadow-renegade-gold/20 transition-all transform hover:-translate-y-0.5"
+          >
+            Join the Team
+          </a>
+          <a
+            href="#car"
+            class="rounded-lg border border-stone-300/50 hover:border-renegade-gold bg-renegade-green/70 lg:bg-renegade-greenMid/60 backdrop-blur-sm hover:bg-renegade-greenMid text-white hover:text-renegade-gold font-display font-bold text-sm tracking-wider uppercase px-6 py-3 transition-all"
+          >
+            Explore the Car
+          </a>
+        </div>
 
-          <!-- Clear Sponsor Page CTAs -->
-          <div class="flex flex-wrap items-center gap-3 mb-7">
-            <a
-              href="/sponsor/index.html"
-              class="inline-flex items-center gap-2 rounded-lg bg-white hover:bg-renegade-goldSoft text-renegade-green font-display font-extrabold text-sm tracking-wider uppercase px-6 py-3 shadow-md transition-all transform hover:-translate-y-0.5"
-            >
-              <span>Become a Sponsor</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </a>
-            <a
-              href="/sponsor/index.html"
-              class="rounded-lg border border-renegade-gold/70 hover:border-renegade-gold bg-renegade-green/75 lg:bg-renegade-greenMid/70 backdrop-blur-sm hover:bg-renegade-gold/15 text-renegade-gold font-display font-bold text-sm tracking-wider uppercase px-5 py-3 transition-all"
-            >
-              Put Your Brand on the Car
-            </a>
-          </div>
+        <!-- Sponsor Page CTAs -->
+        <div class="flex flex-wrap items-center gap-3 mb-7">
+          <a
+            href="/sponsor/index.html"
+            class="inline-flex items-center gap-2 rounded-lg bg-white hover:bg-renegade-goldSoft text-renegade-green font-display font-extrabold text-sm tracking-wider uppercase px-6 py-3 shadow-md transition-all transform hover:-translate-y-0.5"
+          >
+            <span>Become a Sponsor</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+          <a
+            href="/sponsor/index.html"
+            class="rounded-lg border border-renegade-gold/70 hover:border-renegade-gold bg-renegade-green/75 lg:bg-renegade-greenMid/70 backdrop-blur-sm hover:bg-renegade-gold/15 text-renegade-gold font-display font-bold text-sm tracking-wider uppercase px-5 py-3 transition-all"
+          >
+            Put Your Brand on the Car
+          </a>
+        </div>
 
-          <!-- Compact Hero Stats Strip -->
-          <div class="pt-5 border-t border-white/20 grid grid-cols-3 gap-4 max-w-md">
-            <div>
-              <div class="font-display font-black text-2xl sm:text-3xl text-white leading-none">
-                420<span class="text-renegade-gold">+</span>
-              </div>
-              <div class="text-[10px] font-semibold uppercase tracking-widest text-stone-200 mt-1">
-                Teams Worldwide
-              </div>
+        <!-- Compact Hero Stats Strip -->
+        <div class="pt-5 border-t border-white/20 grid grid-cols-3 gap-4 max-w-md">
+          <div>
+            <div class="font-display font-black text-2xl sm:text-3xl text-white leading-none">
+              420<span class="text-renegade-gold">+</span>
             </div>
-            <div>
-              <div class="font-display font-black text-2xl sm:text-3xl text-white leading-none">
-                1<span class="text-renegade-gold">st</span>
-              </div>
-              <div class="text-[10px] font-semibold uppercase tracking-widest text-stone-200 mt-1">
-                Year for Ohlone
-              </div>
+            <div class="text-[10px] font-semibold uppercase tracking-widest text-stone-200 mt-1">
+              Teams Worldwide
             </div>
-            <div>
-              <div class="font-display font-black text-2xl sm:text-3xl text-white leading-none">
-                14<span class="text-renegade-gold">mo</span>
-              </div>
-              <div class="text-[10px] font-semibold uppercase tracking-widest text-stone-200 mt-1">
-                Build Timeline
-              </div>
+          </div>
+          <div>
+            <div class="font-display font-black text-2xl sm:text-3xl text-white leading-none">
+              1<span class="text-renegade-gold">st</span>
+            </div>
+            <div class="text-[10px] font-semibold uppercase tracking-widest text-stone-200 mt-1">
+              Year for Ohlone
+            </div>
+          </div>
+          <div>
+            <div class="font-display font-black text-2xl sm:text-3xl text-white leading-none">
+              14<span class="text-renegade-gold">mo</span>
+            </div>
+            <div class="text-[10px] font-semibold uppercase tracking-widest text-stone-200 mt-1">
+              Build Timeline
             </div>
           </div>
         </div>
-
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Optional: Force autoplay & catch broken file paths/codecs -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const video = document.getElementById("hero-video");
+    if (!video) return;
+
+    video.muted = true; // Required by Safari/Chrome before calling .play()
+    video.play().catch((err) => {
+      console.warn("Hero video autoplay prevented or failed:", err);
+    });
+
+    video.addEventListener("error", () => {
+      console.error("Failed to load video at:", video.currentSrc);
+    });
+  });
+</script>
 
   <!-- SCHOOL PRIDE & HERO DESCRIPTION BAND -->
   <div class="bg-renegade-greenLight dark:bg-renegade-greenMid border-b border-renegade-gold/30 text-white">
