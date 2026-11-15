@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ohlone Renegades Racing</title>
+  <link rel="icon" href="https://ohloneracing.org/assets/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Marked.js for parsing Markdown into HTML -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'media',
+      theme: {
+        extend: {
+          colors: {
+            renegade: {
+              green: '#0B2318',
+              greenMid: '#123525',
+              greenLight: '#1B4D36',
+              gold: '#F2A91E',
+              goldHover: '#D99212',
+              goldSoft: '#FCE8BC',
+            }
+          },
+          fontFamily: {
+            display: ['"Barlow Condensed"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-stone-50 text-stone-900 dark:bg-renegade-green dark:text-stone-100 font-sans antialiased selection:bg-renegade-gold selection:text-renegade-green min-h-screen flex flex-col">
+
+  <!-- STICKY HEADER -->
+  <header class="sticky top-0 z-50 w-full bg-white/85 dark:bg-renegade-green/85 backdrop-blur-md border-b border-stone-200/80 dark:border-renegade-greenLight/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-3 group focus:outline-none">
+        <div class="relative w-10 h-10 rounded-full overflow-hidden shadow-sm ring-2 ring-renegade-gold/60 group-hover:ring-renegade-gold transition-all bg-renegade-green flex items-center justify-center shrink-0">
+          <img src="/assets/renegades-logo.png" alt="Logo" class="w-full h-full object-cover" onerror="this.style.display='none';"/>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-extrabold text-xl tracking-wider uppercase leading-none text-renegade-green dark:text-white">
+            Ohlone <span class="text-renegade-gold">Racing</span>
+          </span>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7">
+        <a href="/index.html#about" class="text-xs font-semibold tracking-widest uppercase text-stone-600 dark:text-stone-300 hover:text-renegade-gold">About</a>
+        <a href="/index.html#car" class="text-xs font-semibold tracking-widest uppercase text-stone-600 dark:text-stone-300 hover:text-renegade-gold">The Car</a>
+        <a href="/index.html#timeline" class="text-xs font-semibold tracking-widest uppercase text-stone-600 dark:text-stone-300 hover:text-renegade-gold">Timeline</a>
+        <a href="/sponsor/index.html" class="text-xs font-bold tracking-widest uppercase text-renegade-gold">Sponsors</a>
+      </nav>
+      <div>
+        <a href="/index.html" class="inline-flex items-center justify-center rounded-lg bg-renegade-gold text-renegade-green font-display font-bold text-xs tracking-wider uppercase px-4 py-2">
+          ← Back to Home
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+    
+    <!-- Breadcrumb -->
+    <div class="text-xs font-semibold uppercase tracking-widest text-renegade-gold mb-3" id="page-breadcrumb">
+      Archive / Loading...
+    </div>
+
+    <!-- Page Title -->
+    <h1 id="page-title" class="font-display font-black uppercase text-4xl sm:text-5xl text-renegade-green dark:text-white mb-4">
+      Loading Page...
+    </h1>
+
+    <!-- Metadata Strip -->
+    <div class="flex items-center gap-4 text-xs text-stone-500 dark:text-stone-400 pb-6 mb-8 border-b border-stone-200 dark:border-renegade-greenLight">
+      <span id="page-date">Updated recently</span>
+    </div>
+
+    <!-- Rendered Markdown Body -->
+    <article id="page-content" class="prose dark:prose-invert max-w-none text-stone-700 dark:text-stone-300 leading-relaxed space-y-4">
+      <p class="animate-pulse">Fetching content from database...</p>
+    </article>
+
+    <!-- READ NEXT / PREVIOUS SECTION -->
+    <div class="mt-16 pt-8 border-t border-stone-200 dark:border-renegade-greenLight">
+      <h3 class="font-display font-extrabold text-xl uppercase tracking-wider text-renegade-green dark:text-white mb-4">
+        Read Next
+      </h3>
+      <div id="read-next-container" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <!-- Dynamically injected next/prev links will go here -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-renegade-green text-stone-300 border-t border-renegade-gold/25 py-8 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs">
+      <p>© Ohlone Renegades Racing. Formula SAE Collegiate Design Team.</p>
+    </div>
+  </footer>
+
+  <!-- CLIENT-SIDE FETCH & RENDER SCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const pageId = urlParams.get('id');
+
+      if (!pageId) {
+        document.getElementById('page-title').textContent = "Page Not Found";
+        document.getElementById('page-content').textContent = "No page ID was specified in the URL.";
+        return;
+      }
+
+      try {
+        // 1. Fetch the specific page data from your Cloudflare Worker/Pages Function API
+        const response = await fetch(`/api/pages/${pageId}`);
+        if (!response.ok) throw new Error("Page not found in database.");
+        
+        const page = await response.json();
+
+        // Update DOM elements
+        document.title = `${page.title} — Ohlone Racing`;
+        document.getElementById('page-breadcrumb').textContent = `Archive / Pages / ${page.title}`;
+        document.getElementById('page-title').textContent = page.title;
+        document.getElementById('page-date').textContent = `Last Updated: ${new Date(page.updated_at).toLocaleDateString()}`;
+
+        // Render Markdown content to HTML using Marked.js
+        document.getElementById('page-content').innerHTML = marked.parse(page.content_md || "");
+
+        // 2. Fetch all published pages to build the "Read Next" navigation cards
+        const listResponse = await fetch('/api/pages/public');
+        if (listResponse.ok) {
+          const pages = await listResponse.json();
+          const currentIndex = pages.findIndex(p => p.id === pageId || p.slug === pageId);
+          
+          const container = document.getElementById('read-next-container');
+          container.innerHTML = '';
+
+          // Pick up to 2 other pages to suggest
+          const suggestions = pages.filter(p => p.id !== pageId).slice(0, 2);
+          
+          if (suggestions.length > 0) {
+            suggestions.forEach((p, idx) => {
+              container.innerHTML += `
+                <a href="/page.html?id=${p.id}" class="block p-4 rounded-xl bg-white dark:bg-renegade-greenMid border border-stone-200 dark:border-renegade-greenLight hover:border-renegade-gold transition-all group">
+                  <div class="font-display font-bold text-[10px] uppercase tracking-widest text-renegade-gold mb-1">Next Article 0${idx + 1}</div>
+                  <h4 class="font-display font-bold text-lg text-renegade-green dark:text-white group-hover:text-renegade-gold transition-colors">${p.title}</h4>
+                </a>
+              `;
+            });
+          } else {
+            container.innerHTML = `<p class="text-xs text-stone-500">No other published articles available right now.</p>`;
+          }
+        }
+
+      } catch (err) {
+        console.error(err);
+        document.getElementById('page-title').textContent = "Error Loading Page";
+        document.getElementById('page-content').textContent = "Could not retrieve the requested content from the database.";
+      }
+    });
+  </script>
+</body>
+</html>
