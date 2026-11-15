@@ -1346,6 +1346,7 @@
 
     loadDynamicPages();
   </script>
+  
   <script>
   document.addEventListener("DOMContentLoaded", async () => {
     const API_URL = "https://admin.ohloneracing.org/api/pages/public";
@@ -1363,7 +1364,7 @@
 
       pages.forEach(page => {
         // Direct link to your slug-based admin route
-        const pageUrl = `https://admin.ohloneracing.org/${page.slug}`;
+        const pageUrl = `/page.html?slug=${page.slug}`;
 
         // 1. Append to Desktop Header Nav
         if (headerNav) {
