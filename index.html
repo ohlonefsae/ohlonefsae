@@ -1349,5 +1349,60 @@
 
     loadDynamicPages();
   </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    // Replace with your actual deployed admin domain worker URL
+    const API_URL = "https://admin.ohloneracing.org/api/pages/public";
+
+    try {
+      const response = await fetch(API_URL);
+      if (!response.ok) throw new Error("Failed to fetch published pages");
+
+      const pages = await response.json();
+      if (!pages || pages.length === 0) return;
+
+      // Select header nav containers
+      const headerNav = document.getElementById('dynamic-header-nav');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const footerNav = document.getElementById('dynamic-footer-nav');
+
+      pages.forEach(page => {
+        // Use ID-based links (or slug if you prefer /slug routing)
+        const pageUrl = `/page.html?id=${page.id}`;
+
+        // 1. Append to Desktop Header Nav
+        if (headerNav) {
+          const headerLink = document.createElement('a');
+          headerLink.href = pageUrl;
+          headerLink.className = "nav-link text-xs font-semibold tracking-widest uppercase text-stone-600 dark:text-stone-300 hover:text-renegade-green dark:hover:text-renegade-gold transition-colors";
+          headerLink.textContent = page.title;
+          headerNav.appendChild(headerLink);
+        }
+
+        // 2. Append to Mobile Menu (if present)
+        if (mobileMenu) {
+          const mobileLink = document.createElement('a');
+          mobileLink.href = pageUrl;
+          mobileLink.className = "mobile-nav-link block py-1.5 text-xs font-semibold uppercase tracking-wider text-stone-700 dark:text-stone-200 hover:text-renegade-gold";
+          mobileLink.textContent = page.title;
+          // Insert before the divider/sponsor section
+          mobileMenu.insertBefore(mobileLink, mobileMenu.firstChild);
+        }
+
+        // 3. Append to Footer Nav
+        if (footerNav) {
+          const footerLink = document.createElement('a');
+          footerLink.href = pageUrl;
+          footerLink.className = "hover:text-renegade-gold transition-colors";
+          footerLink.textContent = page.title;
+          footerNav.appendChild(footerLink);
+        }
+      });
+
+    } catch (error) {
+      console.warn("Could not load dynamic navigation pages:", error);
+    }
+  });
+</script>
 </body>
 </html>
