@@ -1348,7 +1348,6 @@
   </script>
   <script>
   document.addEventListener("DOMContentLoaded", async () => {
-    // Replace with your actual deployed admin domain worker URL
     const API_URL = "https://admin.ohloneracing.org/api/pages/public";
 
     try {
@@ -1358,14 +1357,13 @@
       const pages = await response.json();
       if (!pages || pages.length === 0) return;
 
-      // Select header nav containers
       const headerNav = document.getElementById('dynamic-header-nav');
       const mobileMenu = document.getElementById('mobile-menu');
       const footerNav = document.getElementById('dynamic-footer-nav');
 
       pages.forEach(page => {
-        // Use ID-based links (or slug if you prefer /slug routing)
-        const pageUrl = `/page.html?id=${page.id}`;
+        // Direct link to your slug-based admin route
+        const pageUrl = `https://admin.ohloneracing.org/${page.slug}`;
 
         // 1. Append to Desktop Header Nav
         if (headerNav) {
@@ -1376,13 +1374,12 @@
           headerNav.appendChild(headerLink);
         }
 
-        // 2. Append to Mobile Menu (if present)
+        // 2. Append to Mobile Menu
         if (mobileMenu) {
           const mobileLink = document.createElement('a');
           mobileLink.href = pageUrl;
           mobileLink.className = "mobile-nav-link block py-1.5 text-xs font-semibold uppercase tracking-wider text-stone-700 dark:text-stone-200 hover:text-renegade-gold";
           mobileLink.textContent = page.title;
-          // Insert before the divider/sponsor section
           mobileMenu.insertBefore(mobileLink, mobileMenu.firstChild);
         }
 
