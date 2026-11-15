@@ -186,6 +186,37 @@
   </script>
   <script>
   document.addEventListener("DOMContentLoaded", async () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const pageId = urlParams.get('id');
+    const pageSlug = urlParams.get('slug');
+
+    // Build local API URL
+    let apiUrl = '/api/page?';
+    if (pageId) apiUrl += `id=${pageId}`;
+    else if (pageSlug) apiUrl += `slug=${pageSlug}`;
+    else {
+      document.getElementById('page-title').textContent = "Page Not Found";
+      return;
+    }
+
+    try {
+      const response = await fetch(apiUrl);
+      if (!response.ok) throw new Error("Page not found");
+      
+      const page = await response.json();
+
+      document.title = `${page.title} — Ohlone Racing`;
+      document.getElementById('page-title').textContent = page.title;
+      document.getElementById('page-content').innerHTML = marked.parse(page.content_md || "");
+
+    } catch (err) {
+      document.getElementById('page-title').textContent = "Error Loading Page";
+      document.getElementById('page-content').textContent = "Could not retrieve content from the database.";
+    }
+  });
+</script>
+  <script>
+  document.addEventListener("DOMContentLoaded", async () => {
     // Replace with your actual deployed admin domain worker URL
     const API_URL = "https://admin.ohloneracing.org/";
 
